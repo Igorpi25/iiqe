@@ -18,6 +18,9 @@
 				<div class="err correct">{{ correct }}</div>
 				<div class="try-again" @click="tryAgain"><p>try again</p></div>
 			</div>
+			<div class="progress-bar">
+				<div class="progres-bar-item" v-for="(i, index) in quiz.length" :key="index"></div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -100,9 +103,12 @@ html, body {
 			-moz-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
 			box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
 			cursor: pointer;
+			transition: .5s;
 
-			input[type=radio] {
-				width: 100px;
+			&:hover {
+				-webkit-box-shadow: 0px 0px 30px 0px rgba(50,132,229,0.2);
+				-moz-box-shadow: 0px 0px 30px 0px rgba(50,132,229,0.2);
+				box-shadow: 0px 0px 30px 0px rgba(50,132,229,0.2);
 			}
 		}
 
@@ -130,6 +136,19 @@ html, body {
 			&:hover {
 				color: #FF4848;
 				background: rgba(100,100,100,0.1);
+			}
+		}
+
+		.progress-bar-item {
+			
+			width: 5px;
+			height: 1px;
+
+			&::before {
+				content: "";
+				width: 5px;
+				height: 1px;
+				color: #43B136
 			}
 		}
 	}
