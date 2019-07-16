@@ -1,7 +1,7 @@
 <template>
 	<div class="quiz-container-fluid">
 		<div class="container">
-			<h2 class="title">Paper 3</h2>
+			<h3 class="title">Paper 3</h3>
 			<p class="subtitle">Long Term Insurance Examination</p>
 			<div class="question" v-for="(q, index) in quiz" :key="index">
 				<div v-if="questionIndex===index">
@@ -18,8 +18,8 @@
 				<div class="err correct">{{ correct }}</div>
 				<div class="try-again" @click="tryAgain"><p>try again</p></div>
 			</div>
-			<div class="progress-bar">{{questionIndex}} / {{quiz.length}}</div>
 		</div>
+		<div class="progress-bar">{{questionIndex + 1}} / {{quiz.length}}</div>
 	</div>
 </template>
 
@@ -74,7 +74,18 @@ html, body {
 		text-align: left;
 
 		.title, .subtitle {
+			margin-top: 0;
 			margin-left: 20px;
+		}
+
+		.title {
+			margin-bottom: 5px;
+		}
+
+		.subtitle {
+			@media (max-width: 768px) {
+				font-size: 0.85rem;
+			}
 		}
 
 		.question-item {
@@ -82,25 +93,34 @@ html, body {
 			box-sizing: border-box;
 			padding: 20px;
 			padding-right: 30%;
-			margin-bottom: 30px;
+			margin-bottom: 20px;
 			font-weight: 600;
 			border-radius: 16px;
 			-webkit-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
 			-moz-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
 			box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
+
+			@media (max-width: 768px) {
+				padding-right: 10px;
+				font-size: 0.85rem;
+			}
 		}
 
 		.answer-item {
 			background-color: #fff;
 			box-sizing: border-box;
 			padding: 20px;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 			border-radius: 16px;
 			-webkit-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
 			-moz-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
 			box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
 			cursor: pointer;
 			transition: .5s;
+
+			@media (max-width: 768px) {
+				font-size: 0.85rem;
+			}
 
 			&:hover {
 				-webkit-box-shadow: 0px 0px 30px 0px rgba(50,132,229,0.2);
@@ -130,16 +150,21 @@ html, body {
 			cursor: pointer;
 			transition: .3s;
 
+			@media (max-width: 768px) {
+				height: 100px;
+				line-height: 100px;
+			}
+
 			&:hover {
 				color: #FF4848;
 				background: rgba(100,100,100,0.1);
 			}
 		}
-
-		.progress-bar {
-			margin: 30px 0;
-			text-align: center;
-		}
+	}
+	.progress-bar {
+		position: absolute;
+		top: 20px;
+		right: 20px;
 	}
 }
 
