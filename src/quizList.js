@@ -398,7 +398,8 @@ export const quiz = [
               },
               {
                 text: "Ratification",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "Authority of necessity",
@@ -416,7 +417,8 @@ export const quiz = [
             answers: [
               {
                 text: "Vicarious liability",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "Direct liability",
@@ -447,7 +449,8 @@ export const quiz = [
               },
               {
                 text: "agent of necessity",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "agent of apparent authority",
@@ -473,7 +476,8 @@ export const quiz = [
               },
               {
                 text: "All of the above",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -483,7 +487,8 @@ export const quiz = [
             answers: [
               {
                 text: "will immediately end",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "will terminated by mutual agreement",
@@ -505,7 +510,8 @@ export const quiz = [
             answers: [
               {
                 text: "Bailee of the trust property in a bankruptcy case",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "Executor is planning to insure the deceased's building",
@@ -535,7 +541,8 @@ export const quiz = [
               },
               {
                 text: "A landlord purchases an insurance for his rent",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "An employer purchases a compensation insurance for his employee",
@@ -561,7 +568,8 @@ export const quiz = [
               },
               {
                 text: "ii and iv",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "iii and iv",
@@ -583,7 +591,8 @@ export const quiz = [
               },
               {
                 text: "all insurance contracts",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "it does not apply to any contract of insurance",
@@ -609,7 +618,8 @@ export const quiz = [
               },
               {
                 text: "Medical records of the insured",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -631,7 +641,8 @@ export const quiz = [
               },
               {
                 text: "All of the above",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -645,7 +656,8 @@ export const quiz = [
               },
               {
                 text: "Non-fraudulent non-disclosure",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "Fraudulent misrepresentation",
@@ -667,7 +679,8 @@ export const quiz = [
               },
               {
                 text: "fraudulent non-disclosure is a fraudulent omission to give material facts",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "non-fraudulent non-disclosure is an omission to give material facts to the other party done either innocently or negligently",
@@ -693,7 +706,8 @@ export const quiz = [
               },
               {
                 text: "speculate the dominant cause of a loss",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "can be applied while arranging a policy",
@@ -715,7 +729,8 @@ export const quiz = [
               },
               {
                 text: "Uninsured peril",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "Non-specific peril",
@@ -737,7 +752,8 @@ export const quiz = [
               },
               {
                 text: "The terms uninsured peril and excepted peril are exactly the same in meaning",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "If a single cause is present while the cause is an uninsured peril, the loss is not covered",
@@ -767,7 +783,8 @@ export const quiz = [
               },
               {
                 text: "All of the above",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -785,7 +802,8 @@ export const quiz = [
               },
               {
                 text: "It can sometimes be changed by policy modification",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "It often refers to those loss claims which could not be paid",
@@ -803,7 +821,8 @@ export const quiz = [
               },
               {
                 text: "In some cases, it becomes quite complicated",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "It must be difficult to determine",
@@ -825,7 +844,8 @@ export const quiz = [
               },
               {
                 text: "Both policies are required to pay for the death benefit",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "Only the policy with larger face amount is required to pay for the death benefit",
@@ -851,7 +871,8 @@ export const quiz = [
               },
               {
                 text: "Calculate and handle the policy loan",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "Application of subrogation",
@@ -865,7 +886,8 @@ export const quiz = [
             answers: [
               {
                 text: "Life Insurance",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "Double Insurance",
@@ -887,7 +909,8 @@ export const quiz = [
             answers: [
               {
                 text: "Salvage",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "Salvage",
@@ -909,7 +932,8 @@ export const quiz = [
             answers: [
               {
                 text: "Attributed to the insurer",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "Shared equally by insurer and the insured",
@@ -939,7 +963,8 @@ export const quiz = [
               },
               {
                 text: "Marine Insurance",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "Motor Insurance",
@@ -957,7 +982,8 @@ export const quiz = [
               },
               {
                 text: "If the loss is more than 5%, indemnify in full",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "If the loss is 6%, he excess amount of the 5% will be indemnified",
@@ -979,7 +1005,8 @@ export const quiz = [
               },
               {
                 text: "The insurer is entitled to $ 3,000,000 while the insured is entitled to $2,000,000",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "The insured is entitled to $ 5,000,000 and the insurer $0",
@@ -997,7 +1024,8 @@ export const quiz = [
             answers: [
               {
                 text: "very short, perhaps a matter of only a few weeks or months.",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "around one year",
@@ -1023,7 +1051,8 @@ export const quiz = [
               },
               {
                 text: "market research",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "monitoring",
@@ -1056,7 +1085,8 @@ export const quiz = [
               },
               {
                 text: "All of the above",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -1074,7 +1104,8 @@ export const quiz = [
               },
               {
                 text: "the types of business that is highly undesirable",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "the risk providing the highest commission rate to the insurance intermediaries",
@@ -1088,7 +1119,8 @@ export const quiz = [
             answers: [
               {
                 text: "Life",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "Travel",
@@ -1114,7 +1146,8 @@ export const quiz = [
               },
               {
                 text: "The legal liabilities of the insurer to the claimant",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "The common legal liabilities borne by the insurer and insured",
@@ -1132,7 +1165,8 @@ export const quiz = [
             answers: [
               {
                 text: "Long-tail business",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "Short-tail business",
@@ -1166,7 +1200,8 @@ export const quiz = [
               },
               {
                 text: "Both A and B are correct",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -1188,7 +1223,8 @@ export const quiz = [
               },
               {
                 text: "None of the above",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -1202,7 +1238,8 @@ export const quiz = [
               },
               {
                 text: "in general business is more than long term business",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "in both general and long term business are the same",
@@ -1228,7 +1265,8 @@ export const quiz = [
               },
               {
                 text: "It provides compensation in respect of the death or injury to innocent victims of motor vehicle road accidents where the required compulsory insurance for such situations does not exist",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "All of the above",
@@ -1254,7 +1292,8 @@ export const quiz = [
               },
               {
                 text: "All of the above",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -1268,7 +1307,8 @@ export const quiz = [
               },
               {
                 text: "HK$20 million if the insurer is carrying on any statutory insurance business",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "HK$10 million if the insuer is carrying on only General or only Long Term business",
@@ -1290,7 +1330,8 @@ export const quiz = [
               },
               {
                 text: "the commercial policy which is issued by the member of Hong Kong Federation of Insurers",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "the policy which is effected by an individual policyholder resident in Hong Kong",
@@ -1320,7 +1361,8 @@ export const quiz = [
               },
               {
                 text: "i, iii and iv",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "ii, iii and iv",
@@ -1338,7 +1380,8 @@ export const quiz = [
               },
               {
                 text: "A person who is an agent of one or more insurers",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "A person who is responsible for dealing with insurance contract",
@@ -1356,7 +1399,8 @@ export const quiz = [
             answers: [
               {
                 text: "the Ordinance must prevail",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "the Code must prevail",
@@ -1390,7 +1434,8 @@ export const quiz = [
               },
               {
                 text: "will be cofirmed by the insurer after the registration is completed by the Insurance Agents Registration Board",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -1412,7 +1457,8 @@ export const quiz = [
               },
               {
                 text: "A specified period not exceeding three years",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -1422,7 +1468,8 @@ export const quiz = [
             answers: [
               {
                 text: "four insurance companies",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "one insurance company",
@@ -1444,7 +1491,8 @@ export const quiz = [
             answers: [
               {
                 text: "The Register is maintained by the Insurance Authority",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "The Register is maintained at the the Insurance Authority’s office",
@@ -1478,7 +1526,8 @@ export const quiz = [
               },
               {
                 text: "Appeals Tribunal",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -1488,7 +1537,8 @@ export const quiz = [
             answers: [
               {
                 text: "18",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "21",
@@ -1518,7 +1568,8 @@ export const quiz = [
               },
               {
                 text: "he must comply with the requirement of the Continuing Development Program in such manner and form as specified by the Insurance Authority",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "he does not need to comply with any requirements to continue to be an insurance agent",
@@ -1544,7 +1595,8 @@ export const quiz = [
               },
               {
                 text: "After the date specified by the Insurance Agents Registration Board in the Notice of Confirmation of Registration",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -1566,7 +1618,8 @@ export const quiz = [
               },
               {
                 text: "become a member of a body of insurance brokers",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -1580,7 +1633,8 @@ export const quiz = [
               },
               {
                 text: "Information from client must be treated with total confidentiality",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "Freedom from relevant criminal convictions",
@@ -1610,7 +1664,8 @@ export const quiz = [
               },
               {
                 text: "All of the above",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -1628,7 +1683,8 @@ export const quiz = [
               },
               {
                 text: "Apply to private sectors only",
-                literal: "c"
+                literal: "c",
+                correct: true
               },
               {
                 text: "Any representation of information in any document and includes a personal (identifier)",
@@ -1650,7 +1706,8 @@ export const quiz = [
               },
               {
                 text: "i, ii and iv",
-                literal: "b"
+                literal: "b",
+                correct: true
               },
               {
                 text: "ii, iii and iv",
@@ -1680,7 +1737,8 @@ export const quiz = [
               },
               {
                 text: "single premium contracts in life insurance and annuity",
-                literal: "d"
+                literal: "d",
+                correct: true
               }
             ]
           },
@@ -1690,7 +1748,8 @@ export const quiz = [
             answers: [
               {
                 text: "vigilance because it can occur in any situation",
-                literal: "a"
+                literal: "a",
+                correct: true
               },
               {
                 text: "to suspect all claims",
