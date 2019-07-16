@@ -1,23 +1,24 @@
 <template>
 	<div class="quiz-container-fluid">
 		<div class="container">
-			<h2>Lesson 1</h2>
-			<p>Lesson topic</p>
+			<h3 class="title">Paper 3</h3>
+			<p class="subtitle">Long Term Insurance Examination</p>
 			<div class="question" v-for="(q, index) in quiz" :key="index">
-				<div class="question-item" v-if="questionIndex===index" v-html="q.question"></div>
-				<div @click.prevent="next" v-if="isCorrect">
-					<div class="answer" v-for="a in q.answers" :key="a.text">
-						<label v-if="questionIndex===index">
-							<input type="radio" :name="index" :value="a.correct" />({{ a.literal }}) {{ a.text }}						
-						</label>
+				<div v-if="questionIndex===index">
+					<div class="question-item" v-html="q.question"></div>
+					<div class="answer" v-if="isCorrect">
+						<div class="answer-item"  @click="next(a)" v-for="a in q.answers" :key="a.text">
+							<div>({{ a.literal }}) {{ a.text }}</div>	
+						</div>
 					</div>
 				</div>
 			</div>
-			<div v-show="!isCorrect">
-				<div class="wrong">{{ picked }}</div>
-				<div class="correct">{{ correct }}</div>
-				<p>try again</p>
+			<div class="error" v-show="!isCorrect">
+				<div class="err wrong">{{ picked }}</div>
+				<div class="err correct">{{ correct }}</div>
+				<div class="try-again" @click="tryAgain"><p>try again</p></div>
 			</div>
+			<div class="progress-bar">{{questionIndex + 1}} / {{quiz.length}}</div>
 		</div>
 	</div>
 </template>
@@ -30,23 +31,27 @@ export default {
 			questionIndex: 0,
 			isCorrect: true,
 			correct: '',
-			picked: null,	
+			picked: '',	
 			quiz: quizList,
 		}
 	},
 	methods: {
-		next(e) {
-			if (e.target.value) { 
+		next(obj) {	
+			if(obj.hasOwnProperty('correct')) {
 				this.questionIndex++
+				if(this.questionIndex == this.quiz.length) this.questionIndex = 0
 			}
 			else {
+				this.picked = `(${obj.literal}) ${obj.text}`
+
+				let correct = this.quiz[this.questionIndex].answers.filter(corr => corr.hasOwnProperty('correct'))
+				this.correct = `(${correct[0].literal}) ${correct[0].text}`
+
 				this.isCorrect = false
-			}  
-
-			this.picked = e.target.innerText
-
-			let correct = this.quiz[this.questionIndex].answers.filter(corr => corr.hasOwnProperty('correct'))
-			this.correct = `(${correct[0].literal}) ${correct[0].text}`
+			}
+		},
+		tryAgain() {
+			this.isCorrect = true
 		}
 	}
 }
@@ -55,10 +60,10 @@ export default {
 <style lang="scss">
 html, body {
 	margin: 0;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 .quiz-container-fluid {
-	width: 100vw;
+	max-width: 100vw;
 	height: 100vh;
 	padding: 20px;	
 	background-color: #F5F6FC;
@@ -67,21 +72,103 @@ html, body {
 		max-width: 800px;
 		margin: auto;
 		text-align: left;
+		position: relative;
+
+		.title, .subtitle {
+			margin-top: 0;
+			margin-left: 20px;
+		}
+
+		.title {
+			margin-bottom: 5px;
+		}
+
+		.subtitle {
+			@media (max-width: 768px) {
+				font-size: 0.85rem;
+			}
+		}
 
 		.question-item {
-			max-width: 100%;
 			background-color: #fff;
 			box-sizing: border-box;
-			padding: 16px;
+			padding: 20px;
+			padding-right: 30%;
+			margin-bottom: 20px;
+			font-weight: 600;
+			border-radius: 16px;
+			-webkit-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
+			-moz-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
+			box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
+
+			@media (max-width: 768px) {
+				padding-right: 10px;
+				font-size: 0.85rem;
+			}
 		}
+
+		.answer-item {
+			background-color: #fff;
+			box-sizing: border-box;
+			padding: 20px;
+			margin-bottom: 10px;
+			border-radius: 16px;
+			-webkit-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
+			-moz-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
+			box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
+			cursor: pointer;
+			transition: .5s;
+
+			@media (max-width: 768px) {
+				font-size: 0.85rem;
+			}
+
+			&:hover {
+				-webkit-box-shadow: 0px 0px 30px 0px rgba(50,132,229,0.2);
+				-moz-box-shadow: 0px 0px 30px 0px rgba(50,132,229,0.2);
+				box-shadow: 0px 0px 30px 0px rgba(50,132,229,0.2);
+			}
+		}
+
+		.err {
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			color: #fff;
+		}
+		.wrong {
+			margin-bottom: 20px;
+			background-color: #FF4848;
+		}
+		.correct {
+			background-color: #43B136;
+		}
+		.try-again {
+			height: 400px;
+			line-height: 400px;
+			text-align: center;
+			cursor: pointer;
+			transition: .3s;
+
+			@media (max-width: 768px) {
+				height: 100px;
+				line-height: 100px;
+			}
+
+			&:hover {
+				color: #FF4848;
+				background: rgba(100,100,100,0.1);
+			}
+		}
+	}
+	.progress-bar {
+		position: absolute;
+		top: 20px;
+		right: 20px;
 	}
 }
 
-.wrong {
-	background-color: rgb(235, 43, 43);
-}
-.correct {
-	background-color: rgb(43, 235, 53);
-}
+
 </style>
 
