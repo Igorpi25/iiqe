@@ -18,8 +18,8 @@
 				<div class="err correct">{{ correct }}</div>
 				<div class="try-again" @click="tryAgain"><p>try again</p></div>
 			</div>
+			<div class="progress-bar">{{questionIndex + 1}} / {{quiz.length}}</div>
 		</div>
-		<div class="progress-bar">{{questionIndex + 1}} / {{quiz.length}}</div>
 	</div>
 </template>
 
@@ -72,6 +72,7 @@ html, body {
 		max-width: 800px;
 		margin: auto;
 		text-align: left;
+		position: relative;
 
 		.title, .subtitle {
 			margin-top: 0;
