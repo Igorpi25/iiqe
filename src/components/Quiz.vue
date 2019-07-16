@@ -1,8 +1,8 @@
 <template>
 	<div class="quiz-container-fluid">
 		<div class="container">
-			<h2 class="title">Lesson 1</h2>
-			<p class="subtitle">Lesson topic</p>
+			<h2 class="title">Paper 3</h2>
+			<p class="subtitle">Long Term Insurance Examination</p>
 			<div class="question" v-for="(q, index) in quiz" :key="index">
 				<div v-if="questionIndex===index">
 					<div class="question-item" v-html="q.question"></div>
@@ -18,9 +18,7 @@
 				<div class="err correct">{{ correct }}</div>
 				<div class="try-again" @click="tryAgain"><p>try again</p></div>
 			</div>
-			<div class="progress-bar">
-				<div class="progres-bar-item" v-for="(i, index) in quiz.length" :key="index"></div>
-			</div>
+			<div class="progress-bar">{{questionIndex}} / {{quiz.length}}</div>
 		</div>
 	</div>
 </template>
@@ -41,6 +39,7 @@ export default {
 		next(obj) {	
 			if(obj.hasOwnProperty('correct')) {
 				this.questionIndex++
+				if(this.questionIndex == this.quiz.length) this.questionIndex = 0
 			}
 			else {
 				this.picked = `(${obj.literal}) ${obj.text}`
@@ -61,10 +60,10 @@ export default {
 <style lang="scss">
 html, body {
 	margin: 0;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 .quiz-container-fluid {
-	width: 100vw;
+	max-width: 100vw;
 	height: 100vh;
 	padding: 20px;	
 	background-color: #F5F6FC;
@@ -79,7 +78,6 @@ html, body {
 		}
 
 		.question-item {
-			max-width: 100%;
 			background-color: #fff;
 			box-sizing: border-box;
 			padding: 20px;
@@ -93,7 +91,6 @@ html, body {
 		}
 
 		.answer-item {
-			max-width: 100%;
 			background-color: #fff;
 			box-sizing: border-box;
 			padding: 20px;
@@ -139,17 +136,9 @@ html, body {
 			}
 		}
 
-		.progress-bar-item {
-			
-			width: 5px;
-			height: 1px;
-
-			&::before {
-				content: "";
-				width: 5px;
-				height: 1px;
-				color: #43B136
-			}
+		.progress-bar {
+			margin: 30px 0;
+			text-align: center;
 		}
 	}
 }
