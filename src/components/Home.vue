@@ -41,14 +41,16 @@ export default {
         restart(paperNum) {
             if(paperNum == 'paper1') {
                 localStorage.removeItem('paper_1')
+                localStorage.removeItem('p1_correct')
+                localStorage.removeItem('p1_wrong')
                 this.$router.push({path: '/paper1'})
             }
             if(paperNum == 'paper3') {
                 localStorage.removeItem('paper_3')
+                localStorage.removeItem('p3_correct')
+                localStorage.removeItem('p3_wrong')
                 this.$router.push({path: '/paper3'})
             }
-            localStorage.removeItem('correct')
-            localStorage.removeItem('wrong')
         }
     }
 }

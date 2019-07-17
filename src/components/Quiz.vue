@@ -51,6 +51,8 @@ export default {
 		name: String,
 		quizList: Array,
 		progressKey: String,
+		progressWrong: String,
+		progressCorrect: String
 	},
 	data() {
 		return {
@@ -59,8 +61,8 @@ export default {
 			congrats: false,
 			correct: '',
 			picked: '',	
-			correctColor: JSON.parse(localStorage.getItem('correct')) || [],
-			wrongColor: JSON.parse(localStorage.getItem('wrong')) || []
+			correctColor: JSON.parse(localStorage.getItem(`${this.progressCorrect}correct`)) || [],
+			wrongColor: JSON.parse(localStorage.getItem(`${this.progressWrong}wrong`)) || []
 		}
 	},
 	methods: {
@@ -78,7 +80,7 @@ export default {
 					this.wrongColor.indexOf(this.questionIndex) === -1 ? 
 					this.correctColor.push(this.questionIndex) : this.correctColor
 				
-				localStorage.setItem('correct', JSON.stringify(this.correctColor))
+				localStorage.setItem(`${this.progressCorrect}correct`, JSON.stringify(this.correctColor))
 				
 				setTimeout(() => {
 					this.congrats = false
@@ -95,7 +97,7 @@ export default {
 				this.wrongColor.indexOf(this.questionIndex) === -1 ? 
 					this.wrongColor.push(this.questionIndex) : this.wrongColor
 				
-				localStorage.setItem('wrong', JSON.stringify(this.wrongColor))
+				localStorage.setItem(`${this.progressWrong}wrong`, JSON.stringify(this.wrongColor))
 			}
 			console.log('correct: ' + this.correctColor)
 			console.log('wrong: '  + this.wrongColor)
