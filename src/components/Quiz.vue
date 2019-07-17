@@ -52,11 +52,11 @@ export default {
 
 			if(obj.hasOwnProperty('correct')) {
 				this.congrats = true
-				
+
 				setTimeout(() => {
 					this.congrats = false
 					this.questionIndex++
-				}, 1000)
+				}, 2000)
 
 				if(this.questionIndex == this.quizList.length) 
 					this.questionIndex = 0
@@ -150,7 +150,6 @@ html, body {
 			text-align: center;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
 			
 			&__correct {
 				padding: 10px 0;
