@@ -1968,7 +1968,7 @@ export const quiz =
           literal: "c"
         },
         {
-          text: "",
+          text: "loans to individuals rather than institutions designed",
           literal: "d"
         }
       ]
@@ -1998,904 +1998,946 @@ export const quiz =
     },
     {//11
       question:
-        ``,
+        `When a person want to get a little death is also less than 1 million in compensation, the amount donated is used to send attended university. The most economical point of view, which of the following products are most suitable?`,
       answers: [
         {
-          text: "",
-          literal: "a"
+          text: "non-participating whole life insurance",
+          literal: "a",
+          correct: true
         },
         {
-          text: "",
+          text: "life insurance dividends",
           literal: "b"
         },
         {
-          text: "",
+          text: "non-participating life insurance savings",
           literal: "c"
         },
         {
-          text: "",
+          text: "savings and life insurance dividends",
           literal: "d"
         }
       ]
     },
     {//12
       question:
-        ``,
+        `Which of the following is a description of the whole life insurance is not correct?<br>
+        (i) the amount of death benefit decreasing<br>
+        (ii) the policy can not be issued in the form of dividends<br>
+        (iii) the life insured is still alive in the whole of its period, may pay a premium<br>
+        (iv) only in a specific period of time will pay the insured death`,
       answers: [
         {
-          text: "",
+          text: "(i), (ii)",
           literal: "a"
         },
         {
-          text: "",
+          text: "(i), (ii), (iii)",
           literal: "b"
         },
         {
-          text: "",
-          literal: "c"
+          text: "(i), (ii), (iv)",
+          literal: "c",
+          correct: true
         },
         {
-          text: "",
+          text: "(i), (ii), (iii), (iv)",
           literal: "d"
         }
       ]
     },
     {//13
       question:
-        ``,
+        `Which of the following does not belong to universal life features?`,
       answers: [
         {
-          text: "",
+          text: "adjust the amount of insurance benefits",
           literal: "a"
         },
         {
-          text: "",
-          literal: "b"
+          text: "does not accumulate cash value",
+          literal: "b",
+          correct: true
         },
         {
-          text: "",
+          text: "flexible premium",
           literal: "c"
         },
         {
-          text: "",
+          text: "above are not the characteristics of universal life",
           literal: "d"
         }
       ]
     },
     {//14
       question:
-        ``,
+        `The subject of the annuity in the annuity during the lifetime of periodic payments in the amount specified, the following items that statement is correct?`,
       answers: [
         {
-          text: "",
+          text: "underwriting life insurance and in fact there is no difference",
           literal: "a"
         },
         {
-          text: "",
+          text: " because women live longer, so generally do not accept insurance annuity",
           literal: "b"
         },
         {
-          text: "",
-          literal: "c"
+          text: "women receive less regular annuity amount than the same situation of men.",
+          literal: "c",
+          correct: true
         },
         {
-          text: "",
+          text: "men collect the amount of the regular annuity less than the same situation of women.",
           literal: "d"
         }
       ]
     },
     {//15
       question:
-        ``,
+        `Which of the following names is to allow more employers to participate in an independent group life insurance`,
       answers: [
         {
-          text: "",
+          text: "Consolidated groups",
           literal: "a"
         },
         {
-          text: "",
-          literal: "b"
+          text: "multiple-employer groups",
+          literal: "b",
+          correct: true
         },
         {
-          text: "",
+          text: "Independent Employers Group",
           literal: "c"
         },
         {
-          text: "",
+          text: "more than a single employer group",
           literal: "d"
         }
       ]
     },
     {//16
       question:
-        ``,
+        `In the life insurance to make certain restrictions and additional protection can be described as an endorsement:`,
       answers: [
         {
-          text: "",
+          text: "certificate of insurance",
           literal: "a"
         },
         {
-          text: "",
-          literal: "b"
+          text: "riders",
+          literal: "b",
+          correct: true
         },
         {
-          text: "",
+          text: "the waiting period",
           literal: "c"
         },
         {
-          text: "",
+          text: "exclusion",
           literal: "d"
         }
       ]
     },
     {//17
       question:
-        ``,
+        `The rider can provide the advance payment of insurance benefits call:`,
       answers: [
         {
-          text: "",
+          text: "quickly benefit riders",
           literal: "a"
         },
         {
-          text: "",
-          literal: "b"
+          text: "living benefit riders",
+          literal: "b",
+          correct: true
         },
         {
-          text: "",
+          text: "death benefit riders",
           literal: "c"
         },
         {
-          text: "",
+          text: "insurance benefit riders",
           literal: "d"
         }
       ]
     },
     {//18
       question:
-        ``,
+        `Insurers to provide health insurance benefits, which of the following interest payment is not correct the situation:`,
       answers: [
         {
-          text: "",
-          literal: "a"
+          text: "injured in traffic accidents caused by compensation for medical expenses not be",
+          literal: "a",
+          correct: true
         },
         {
-          text: "",
+          text: "If medical insurance is not in the form of additional contracts entered into in life insurance contracts, general insurance contracts will be considered",
           literal: "b"
         },
         {
-          text: "",
+          text: "with the basic plan will pay medical and hospital expenses related to",
           literal: "c"
         },
         {
-          text: "",
+          text: "optional plan for payment of an additional premium to improve safeguard quotas",
           literal: "d"
         }
       ]
     },
     {//19
       question:
-        ``,
+        `Cost of Living Adjustment (COLA) rider is intended to:`,
       answers: [
         {
-          text: "",
+          text: "to resist the impact of the economic cycle",
           literal: "a"
         },
         {
-          text: "",
+          text: "the fear of suffering from serious diseases by insurance policies issued to all part of the sum insured",
           literal: "b"
         },
         {
-          text: "",
+          text: "a deal with the impact of inflation and deflation arrangements",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
+          text: "above are not",
+          literal: "d",
+          correct: true
         }
       ]
     },
     {//20
       question:
-        ``,
+        `Cost of Living Adjustment (COLA) rider is insured to the insured on the annual increments`,
       answers: [
         {
-          text: "",
+          text: "is adjusted based on bank deposit interest rates",
           literal: "a"
         },
         {
-          text: "",
-          literal: "b"
+          text: "is based on the consumer price index adjustment",
+          literal: "b",
+          correct: true
         },
         {
-          text: "",
+          text: "is adjusted according to stock market returns",
           literal: "c"
         },
         {
-          text: "",
+          text: "is 5% per year according to the insurance company to adjust",
           literal: "d"
         }
       ]
     },
     {//21
       question:
-        ``,
+        `Policy for the insured to provide all people with physical disabilities in the disability insurance benefits, including the terms of the Waiver of Premium does not include which of the following?`,
       answers: [
         {
-          text: "",
+          text: "the waiting period of three months or six months",
           literal: "a"
         },
         {
-          text: "",
-          literal: "b"
+          text: '"Waiver of Premium" in effect during the waiting period',
+          literal: "b",
+          correct: true
         },
         {
-          text: "",
+          text: '"Waiver of Premium" in effect after the waiting period',
           literal: "c"
         },
         {
-          text: "",
+          text: "If the insured person in rehabilitation during the waiting period, you will not be exempt",
           literal: "d"
         }
       ]
     },
     {//22
       question:
-        ``,
+        `Disability income insurance benefits will be given in the accident led to all disabled insured to provide disability income insurance policies, but the frequency of payment of interest income`,
       answers: [
         {
-          text: "",
+          text: "Daily",
           literal: "a"
         },
         {
-          text: "",
-          literal: "b"
+          text: "Monthly",
+          literal: "b",
+          correct: true
         },
         {
-          text: "",
+          text: "annual settlement policy",
           literal: "c"
         },
         {
-          text: "",
+          text: "end of the period of disability",
           literal: "d"
         }
       ]
     },
     {//23
       question:
-        ``,
+        `Which of the following or who is the "Waiver of Premium" exclusions?<br>
+        (i) intentional self-inflicted injuries<br>
+        (ii) pre-existing conditions<br>
+        (iii) injuries sustained whilst engaging in criminal activities;<br>
+        (iv) injuries resulting from war while the policyowner-insured is in military service.`,
       answers: [
         {
-          text: "",
+          text: "(i), (ii)",
           literal: "a"
         },
         {
-          text: "",
+          text: "(i), (iv)",
           literal: "b"
         },
         {
-          text: "",
+          text: "(i), (iii), (iv)",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
+          text: "(i), (ii), (iii), (iv)",
+          literal: "d",
+          correct: true
         }
       ]
     },
     {//24
       question:
-        ``,
+        `Accidental Death and Dismemberment rider with some time been modified, so that the following items or those accidents, the need to pay a death benefit equal to half the amount of:`,
       answers: [
         {
-          text: "",
+          text: "the loss of a leg",
           literal: "a"
         },
         {
-          text: "",
+          text: "loss of an arm",
           literal: "b"
         },
         {
-          text: "",
+          text: "of one eye",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
+          text: "any of the above but the total amount shall not exceed an amount equal to the amount of death benefit",
+          literal: "d",
+          correct: true
         }
       ]
     },
     {//25
       question:
-        ``,
+        `Which of the following is not "other accident insurance" exclusion?`,
       answers: [
         {
-          text: "",
+          text: "Injuries whilst involved in illegal activities",
           literal: "a"
         },
         {
-          text: "",
+          text: "Injuries resulting from hazardous sports",
           literal: "b"
         },
         {
-          text: "",
+          text: "Childbirth & pregnancy;",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
+          text: "disease caused by the accident",
+          literal: "d",
+          correct: true
         }
       ]
     },
     {//26
       question:
-        ``,
+        `Life insurance can be added to GIO rider, is`,
       answers: [
         {
-          text: "",
+          text: "Granted Insurance Option",
           literal: "a"
         },
         {
-          text: "",
+          text: "General Insurance Option",
           literal: "b"
         },
         {
-          text: "",
+          text: "Guaranteed Insurance Option",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
+          text: "Guaranteed Insurability Option",
+          literal: "d",
+          correct: true
         }
       ]
     },
     {//27
       question:
-        ``,
+        `Which of the following is the intention of living adjustment?`,
       answers: [
         {
-          text: "",
-          literal: "a"
+          text: "an arrangement to cope with the effects of inflation",
+          literal: "a",
+          correct: true
         },
         {
-          text: "",
+          text: "is suffering from the final benefit for people without the disease",
           literal: "b"
         },
         {
-          text: "",
+          text: "insurance in times of economic downturn, as a bonus compensation",
           literal: "c"
         },
         {
-          text: "",
+          text: "above are not the answer",
           literal: "d"
         }
       ]
     },
     {//28
       question:
-        ``,
+        `Which of the following life insurance policies in the "Entire Contract Provision" clause of the description is not correct:`,
       answers: [
         {
-          text: "",
+          text: "complete the contract, including insurance and insured single copies",
           literal: "a"
         },
         {
-          text: "",
+          text: "unless the policy owner's consent, or the insurer can not make any changes to the contract",
           literal: "b"
         },
         {
-          text: "",
-          literal: "c"
+          text: "change to the contract can be made unless the insurance company agrees",
+          literal: "c",
+          correct: true
         },
         {
-          text: "",
+          text: "only the insurance company designated senior staff have the right to make changes to the policy",
           literal: "d"
         }
       ]
     },
     {//29
       question:
-        ``,
+        `Participating life insurance policy dividend options include:<br>
+        (i) immediate payment in cash<br>
+        (ii) the imposition of deposit earn interest on the insurance<br>
+        (iii) If the policy owner no choice, the insurer will adopt the "automatic dividend options"<br>
+        (iv) If the policy owner no selection, will loss the bonuses`,
       answers: [
         {
-          text: "",
-          literal: "a"
+          text: "(i), (ii), (iii)",
+          literal: "a",
+          correct: true
         },
         {
-          text: "",
+          text: "(i), (ii), (iv)",
           literal: "b"
         },
         {
-          text: "",
+          text: "(i), (iii), (iv)",
           literal: "c"
         },
         {
-          text: "",
+          text: "(i), (ii), (iii), (iv)",
           literal: "d"
         }
       ]
     },
     {//30
       question:
-        ``,
+        `Automatic dividend option can used to buy paid-up additional insurance and:`,
       answers: [
         {
-          text: "",
+          text: "cash",
           literal: "a"
         },
         {
-          text: "",
+          text: "purchase year term life insurance",
           literal: "b"
         },
         {
-          text: "",
+          text: "pay the premium",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
+          text: "leaving the dividends with the insurer to earn interest",
+          literal: "d",
+          correct: true
         }
       ]
     },
     {//31
       question:
-        ``,
+        `Which of the following settlement options are correct ?`,
       answers: [
         {
-          text: "",
+          text: "the insurance company to pay shares instead of cash",
           literal: "a"
         },
         {
-          text: "",
+          text: "the use of life insurance benefits to purchase term insurance regularly",
           literal: "b"
         },
         {
-          text: "",
-          literal: "c"
+          text: "the policy proceeds (and interest) are paid in equal instalments of a stated amount for as long as the money lasts",
+          literal: "c",
+          correct: true
         },
         {
-          text: "",
+          text: "All of the above",
           literal: "d"
         }
       ]
     },
     {//32
       question:
-        ``,
+        `According to terms of life insurance policies commonly used in suicide, if the first period (for example, the first policy year) of suicide:`,
       answers: [
         {
-          text: "",
+          text: 'tend to "accommodate" nature of the payment of claims',
           literal: "a"
         },
         {
-          text: "",
-          literal: "b"
+          text: "without payment of the claim, however, be returned to the premium",
+          literal: "b",
+          correct: true
         },
         {
-          text: "",
+          text: "required to pay for claims, premiums paid are not refundable",
           literal: "c"
         },
         {
-          text: "",
+          text: "the objection is not relevant for debt",
           literal: "d"
         }
       ]
     },
     {//33
       question:
-        ``,
+        `Which of the following description of the terms of the incontestability provision is not correct?`,
       answers: [
         {
-          text: "",
+          text: "In normal circumstances, two years after the policy in effect become a non- objection",
           literal: "a"
         },
         {
-          text: "",
+          text: "the insured must still living in the past two years",
           literal: "b"
         },
         {
-          text: "",
+          text: "the insured's fraud can overturn this provision",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
+          text: "even if no insurable interest, the policy will become effective two years after the non-objection",
+          literal: "d",
+          correct: true
         }
       ]
     },
     {//34
       question:
-        ``,
+        `The following types of insurance policy does not apply to "nonforfeiture benefits"?`,
       answers: [
         {
-          text: "",
+          text: "annuity",
           literal: "a"
         },
         {
-          text: "",
+          text: "annuity",
           literal: "b"
         },
         {
-          text: "",
+          text: "he policy no contain any cash value",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
+          text: "none of the above provisions apply to this",
+          literal: "d",
+          correct: true
         }
       ]
     },
     {//35
       question:
-        ``,
+        `
+In Hong Kong life insurance policy for the automatic dividend option will store the insurer in the insurance dividends distributed to the imposition of interest and earn:`,
       answers: [
         {
-          text: "",
+          text: "paid in cash",
           literal: "a"
         },
         {
-          text: "",
+          text: "purchase year term insurance",
           literal: "b"
         },
         {
-          text: "",
-          literal: "c"
+          text: "purchase of paid-up additional insurance",
+          literal: "c",
+          correct: true
         },
         {
-          text: "",
+          text: "to pay future policy premiums",
           literal: "d"
         }
       ]
     },
     {//36
       question:
-        ``,
+        `Among the incontestability provision, policy in-force over two years, the insurer can not challenge the validity of the insurance contract. In Hong Kong, the insurer still has the right to challenge after two years, but only to fraud or`,
       answers: [
         {
-          text: "",
+          text: "Waiver of Premium benefit policies in force",
           literal: "a"
         },
         {
-          text: "",
+          text: "all insurance policies have been canceled",
           literal: "b"
         },
         {
-          text: "",
+          text: "the additional payment in advance about the policy with the insurance benefits",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
+          text: "the insured dies within two years",
+          literal: "d",
+          correct: true
         }
       ]
     },
     {//37
       question:
-        ``,
+        `Decided not to pay any premium for the policy, which policy holders can have a choice?`,
       answers: [
         {
-          text: "",
+          text: "cash surrender value",
           literal: "a"
         },
         {
-          text: "",
+          text: "reduced paid-up insurance",
           literal: "b"
         },
         {
-          text: "",
+          text: "extended term insurance",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
+          text: "above are correct",
+          literal: "d",
+          correct: true
         }
       ]
     },
     {//38
       question:
-        ``,
+        `If the age of false positives and / or gender, is bound to the premium and / or insurance benefits be affected. However, before the error was found in the claim occurred, the amount of insurance policy:`,
       answers: [
         {
-          text: "",
+          text: "does not make any adjustments",
           literal: "a"
         },
         {
-          text: "",
+          text: "invalid and returned immediately to protect the premium",
           literal: "b"
         },
         {
-          text: "",
-          literal: "c"
+          text: "the amount of the benefit or premium can be adjusted (up or down) to reflect the amount payable correct",
+          literal: "c",
+          correct: true
         },
         {
-          text: "",
+          text: "involving fraud, the amount required to adjust",
           literal: "d"
         }
       ]
     },
     {//39
       question:
-        ``,
+        `There are two types of assignment, absolute assignment and :`,
       answers: [
         {
-          text: "",
+          text: "the final transfer",
           literal: "a"
         },
         {
-          text: "",
+          text: "of the transfer",
           literal: "b"
         },
         {
-          text: "",
-          literal: "c"
+          text: "collateral assignment",
+          literal: "c",
+          correct: true
         },
         {
-          text: "",
+          text: "a temporary transfer",
           literal: "d"
         }
       ]
     },
     {//40
       question:
-        ``,
+        `One kind of life insurance policies, only death within a specified period of commitment to pay only the amount of interest, including:<br>
+        (i)level term life insurance<br>
+        (ii) the same term life insurance<br>
+        (iii) decreasing term life insurance<br>
+        (iv) non-decreasing term life insurance`,
       answers: [
         {
-          text: "",
+          text: "(i), (ii)",
           literal: "a"
         },
         {
-          text: "",
-          literal: "b"
+          text: "(i), (iii)",
+          literal: "b",
+          correct: true
         },
         {
-          text: "",
+          text: "(ii), (iii)",
           literal: "c"
         },
         {
-          text: "",
+          text: "(ii), (iv)",
           literal: "d"
         }
       ]
     },
     {//41
       question:
-        ``,
+        `Endowment Insurance , including which of the following items?<br>
+        (i) policy can be par or non-par<br>
+        (ii) is a "pure endowment."<br>
+        (iii) payment of the face amount at the end of a specified term or upon earlier death<br>
+        (iv) premiums are level`,
       answers: [
         {
-          text: "",
+          text: "i, ii, iii",
           literal: "a"
         },
         {
-          text: "",
+          text: "i, ii, iv",
           literal: "b"
         },
         {
-          text: "",
-          literal: "c"
+          text: "i, iii, iv",
+          literal: "c",
+          correct: true
         },
         {
-          text: "",
+          text: "ii, iii, iv",
           literal: "d"
         }
       ]
     },
     {//42
       question:
-        ``,
+        `Mutual insurance companies owner is:`,
       answers: [
         {
-          text: "",
+          text: "shareholders of the Company",
           literal: "a"
         },
         {
-          text: "",
+          text: "an independent person",
           literal: "b"
         },
         {
-          text: "",
+          text: "insurance intermediaries",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
+          text: "all of a participating policyholders",
+          literal: "d",
+          correct: true
         }
       ]
     },
     {//43
       question:
-        ``,
+        `Client service department to take a number of functions, the following is quite possible functions of the task?
+        (i) Policy renewals
+        (ii) Changes to policies
+        (iii) Communication
+        (iv) Documentation`,
       answers: [
         {
-          text: "",
+          text: "(i), (ii)",
           literal: "a"
         },
         {
-          text: "",
+          text: "(ii), (iii)",
           literal: "b"
         },
         {
-          text: "",
+          text: "(ii), (iii), (iv)",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
+          text: "(i), (ii), (iii), (iv)",
+          literal: "d",
+          correct: true
         }
       ]
     },
     {//44
       question:
-        ``,
+        `Client service, also known as POS, then POS is a full write:`,
       answers: [
         {
-          text: "",
+          text: "Pride in Our Service",
           literal: "a"
         },
         {
-          text: "",
-          literal: "b"
+          text: "Policy Owner Service",
+          literal: "b",
+          correct: true
         },
         {
-          text: "",
+          text: "Priority Office Service",
           literal: "c"
         },
         {
-          text: "",
+          text: "Personal Operation Service",
           literal: "d"
         }
       ]
     },
     {//45
       question:
-        ``,
+        `Contract premium receipts are also other names, such as the TIA, that is:`,
       answers: [
         {
-          text: "",
+          text: "Term Insurance Application",
           literal: "a"
         },
         {
-          text: "",
+          text: "Temporary Insurance Acceptance",
           literal: "b"
         },
         {
-          text: "",
-          literal: "c"
+          text: "Temporary Insurance Agreement",
+          literal: "c",
+          correct: true
         },
         {
-          text: "",
+          text: "Temporary Insurance Announcement",
           literal: "d"
         }
       ]
     },
     {//46
       question:
-        ``,
+        `Cooling-off period to cancel the insured and the insured can recover the premium paid during the cooling-off period the following provisions which are periods?`,
       answers: [
         {
-          text: "",
+          text: "The Cooling-off Period is 30 days after the delivery of the policy or issue of a Notice to the policyholder or the policyholder’s representative, whichever is the earlier.",
           literal: "a"
         },
         {
-          text: "",
-          literal: "b"
+          text: "The Cooling-off Period is 21 days after the delivery of the policy or issue of a Notice to the policyholder or the policyholder’s representative, whichever is the earlier.",
+          literal: "b",
+          correct: true
         },
         {
-          text: "",
+          text: "The Cooling-off Period is 14 days after the delivery of the policy or issue of a Notice to the policyholder or the policyholder’s representative, whichever is the earlier.",
           literal: "c"
         },
         {
-          text: "",
+          text: "The Cooling-off Period is 9 days after the delivery of the policy or issue of a Notice to the policyholder or the policyholder’s representative, whichever is the earlier.",
           literal: "d"
         }
       ]
     },
     {//47
       question:
-        ``,
+        `Non-linked insurance policies in the sales brochures, policy holders can extract cash dividends expected to be obtained, its use of interest rate`,
       answers: [
         {
-          text: "",
+          text: "has stated in the illustration document, guaranteed",
           literal: "a"
         },
         {
-          text: "",
+          text: "In no documentation states that guaranteed",
           literal: "b"
         },
         {
-          text: "",
-          literal: "c"
+          text: "has stated in the illustration document, no guarantee",
+          literal: "c",
+          correct: true
         },
         {
-          text: "",
+          text: "In no documentation states that there is insurance",
           literal: "d"
         }
       ]
     },
     {//48
       question:
-        ``,
+        `Insurers would recommend the book in its insurance plan referred to a "premium offset" approach, If so, the insurance policy when the sales person should:`,
       answers: [
         {
-          text: "",
-          literal: "a"
+          text: "explain to the customer that, at any time, when customers choose a premium offset, Interest rates can fall to restore money when customers need to pay premiums, otherwise it may lead to policy failure or reduce the amount of interest.",
+          literal: "a",
+          correct: true
         },
         {
-          text: "",
+          text: "explain to the customer that, at any time, when customers choose a premium offset,Mortality rate is rising, to recover money when customers need to pay premiums, otherwise it may lead to policy failure or reduce the amount of interest.",
           literal: "b"
         },
         {
-          text: "",
+          text: "explain to the customer that, at any time, the insurer may offset this option to recover the premium.",
           literal: "c"
         },
         {
-          text: "",
+          text: "explained in detail to the customer at any time, the insurer may give notice to the customer without cases, the premium to offset this option to recover.",
           literal: "d"
         }
       ]
     },
     {//49
       question:
-        ``,
+        `Which of the following is not a life insurance or underwriting factors? Why do you say? `,
       answers: [
         {
-          text: "",
-          literal: "a"
+          text: "significantly overweight are underwriting factors, which are linked with certain diseases",
+          literal: "a",
+          correct: true
         },
         {
-          text: "",
+          text: "in Kara OK, bar, or casino underwriting factors are not working, because no insurer would charge higher premiums of such occupational",
           literal: "b"
         },
         {
-          text: "",
+          text: "ultra-light weight is not part of the underwriting factors, because any disease can not be linked up with this",
           literal: "c"
         },
         {
-          text: "",
+          text: "in the cigarette trade company is underwriting factors, statistics show that many diseases associated with",
           literal: "d"
         }
       ]
     },
     {//50
       question:
-        ``,
+        `Life insurance underwriters often risk classification to determine a fair premium, Which of the following does not belong to those different categories?`,
       answers: [
         {
-          text: "",
+          text: "Standard risk",
           literal: "a"
         },
         {
-          text: "",
+          text: "sub-standard risk",
           literal: "b"
         },
         {
-          text: "",
+          text: "Preferred risk",
           literal: "c"
         },
         {
-          text: "",
-          literal: "d"
-        }
-      ]
-    },
-    {//
-      question:
-        ``,
-      answers: [
-        {
-          text: "",
-          literal: "a"
-        },
-        {
-          text: "",
-          literal: "b"
-        },
-        {
-          text: "",
-          literal: "c",
+          text: "High risk",
+          literal: "d",
           correct: true
-        },
-        {
-          text: "",
-          literal: "d"
         }
       ]
     }
