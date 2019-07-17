@@ -4,16 +4,19 @@
 			<h3 class="title">{{ name }}</h3>
 			<p class="subtitle">Long Term Insurance Examination</p>
 			<div class="question" v-for="(q, index) in quizList" :key="index">
-				<div v-if="questionIndex===index&&!congrats">
+				<div v-if="questionIndex===index">
 					<div class="question-item" v-html="q.question"></div>
-					<div class="answer" v-if="isCorrect">
+					<div class="answer" v-if="isCorrect&&!congrats">
 						<div class="answer-item" @click="next(a)" v-for="a in q.answers" :key="a.text">
 							<div>({{ a.literal }}) {{ a.text }}</div>	
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="congrats" v-show="congrats">Yes!</div>
+			<div class="congrats" v-show="congrats">
+				<div class="congrats__correct">{{ correct }}</div>
+				<p>Yes!</p>
+			</div>
 			<div class="error" v-show="!isCorrect">
 				<div class="err wrong">{{ picked }}</div>
 				<div class="err correct">{{ correct }}</div>
@@ -25,7 +28,6 @@
 </template>
 
 <script>
-//import { quiz_1 as quizList } from "../quizList"
 import { setTimeout } from 'timers';
 export default {
 	props: {
@@ -39,26 +41,27 @@ export default {
 			congrats: false,
 			correct: '',
 			picked: '',	
-			//quiz: quizList,
 		}
 	},
 	methods: {
 		next(obj) {	
-			if(obj.hasOwnProperty('correct')) {
-				this.questionIndex++
+			this.picked = `(${obj.literal}) ${obj.text}`
 
+			let correct = this.quizList[this.questionIndex].answers.filter(corr => corr.hasOwnProperty('correct'))
+			this.correct = `(${correct[0].literal}) ${correct[0].text}`
+
+			if(obj.hasOwnProperty('correct')) {
 				this.congrats = true
-				setTimeout(() => {this.congrats = false}, 700)
+				
+				setTimeout(() => {
+					this.congrats = false
+					this.questionIndex++
+				}, 1000)
 
 				if(this.questionIndex == this.quizList.length) 
 					this.questionIndex = 0
 			}
 			else {
-				this.picked = `(${obj.literal}) ${obj.text}`
-
-				let correct = this.quizList[this.questionIndex].answers.filter(corr => corr.hasOwnProperty('correct'))
-				this.correct = `(${correct[0].literal}) ${correct[0].text}`
-
 				this.isCorrect = false
 			}
 		},
@@ -144,11 +147,23 @@ html, body {
 
 		.congrats {
 			height: 600px;
-			transform: translateY(50%);	
-			font-size: 2rem;
-			font-weight: 600;
 			text-align: center;
-			color: #43B136;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			
+			&__correct {
+				padding: 10px 0;
+				background-color: #43B136;
+				color: #fff;
+			}
+
+			p {
+				transform: translateY(50%);	
+				font-size: 2rem;
+				font-weight: 600;
+				color: #43B136;
+			}
 
 			@media (max-width: 768px) {
 				height: 300px;
