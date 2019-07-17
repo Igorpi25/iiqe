@@ -47,6 +47,8 @@ export default {
                 localStorage.removeItem('paper_3')
                 this.$router.push({path: '/paper3'})
             }
+            localStorage.removeItem('correct')
+            localStorage.removeItem('wrong')
         }
     }
 }

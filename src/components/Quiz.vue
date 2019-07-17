@@ -1,36 +1,41 @@
 <template>
 	<div class="quiz-container-fluid">
 		<div class="container">
-			<h3 class="title">{{ name }}</h3>
-			<p class="subtitle">Long Term Insurance Examination</p>
-			<div class="question" v-for="(q, index) in quizList" :key="index">
-				<div v-if="questionIndex===index">
-					<div class="question-item" v-html="q.question"></div>
-					<div class="answer" v-if="isCorrect&&!congrats">
-						<div class="answer-item" @click="next(a)" v-for="a in q.answers" :key="a.text">
-							<div>({{ a.literal }}) {{ a.text }}</div>	
+			<div>
+				<h3 class="title">{{ name }}</h3>
+				<p class="subtitle">Long Term Insurance Examination</p>
+				<div class="question" v-for="(q, index) in quizList" :key="index">
+					<div v-if="questionIndex===index">
+						<div class="question-item" v-html="q.question"></div>
+						<div class="answer" v-if="isCorrect&&!congrats">
+							<div class="answer-item" @click="next(a)" v-for="a in q.answers" :key="a.text">
+								<div>({{ a.literal }}) {{ a.text }}</div>	
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+
 			<div class="congrats" v-show="congrats">
 				<div class="congrats__correct">{{ correct }}</div>
 				<p>Yes!</p>
 			</div>
+
 			<div class="error" v-show="!isCorrect">
 				<div class="err wrong">{{ picked }}</div>
 				<div class="err correct">{{ correct }}</div>
 				<div class="try-again" @click="tryAgain"><p>try again</p></div>
 			</div>
 			<div class="counter">{{questionIndex + 1}} / {{quizList.length}}</div>
-			<div v-if="!congrats && isCorrect">
+
+			<div class="progress-footer" v-if="!congrats && isCorrect">
 				<div class="digital">
 				<div class="digital__correct" style="color:#43B136">{{ correctColor.length }}</div>
-					<div class="digital__wrong" style="color:#FF4848">{{ wrongColor.size }}</div>
+					<div class="digital__wrong" style="color:#FF4848">{{ wrongColor.length }}</div>
 				</div>
 				<div class="progress-bar">
 					<div class="pending" 
-						:class="[{ good: correctColor.indexOf(index) !== -1 }, { bad: wrongColor.has(index) }, { current: questionIndex == index}]" 
+						:class="[{ good: correctColor.indexOf(index) !== -1 }, { bad: wrongColor.indexOf(index) !== -1 }, { current: questionIndex == index}]" 
 						v-for="(n, index) in quizList" :key="index">
 					</div>
 				</div>
@@ -45,7 +50,7 @@ export default {
 	props: {
 		name: String,
 		quizList: Array,
-		progressKey: String
+		progressKey: String,
 	},
 	data() {
 		return {
@@ -54,24 +59,27 @@ export default {
 			congrats: false,
 			correct: '',
 			picked: '',	
-			correctColor: [],
-			wrongColor: new Set()
+			correctColor: JSON.parse(localStorage.getItem('correct')) || [],
+			wrongColor: JSON.parse(localStorage.getItem('wrong')) || []
 		}
 	},
 	methods: {
 		next(obj) {	
-			this.picked = `(${obj.literal}) ${obj.text}`
-
 			let correct = this.quizList[this.questionIndex].answers.filter(corr => corr.hasOwnProperty('correct'))
 			this.correct = `(${correct[0].literal}) ${correct[0].text}`
+
+			this.picked = `(${obj.literal}) ${obj.text}`
 
 			if(obj.hasOwnProperty('correct')) {
 				this.congrats = true
 				this.isWrong = false
 
-				this.correctColor.push(this.questionIndex)
-				console.log(this.correctColor)
-
+				this.correctColor.indexOf(this.questionIndex) === -1 && 
+					this.wrongColor.indexOf(this.questionIndex) === -1 ? 
+					this.correctColor.push(this.questionIndex) : this.correctColor
+				
+				localStorage.setItem('correct', JSON.stringify(this.correctColor))
+				
 				setTimeout(() => {
 					this.congrats = false
 					this.questionIndex++
@@ -84,15 +92,19 @@ export default {
 			}
 			else {
 				this.isCorrect = false
-				this.wrongColor.add(this.questionIndex)
-				console.log(this.wrongColor)
+				this.wrongColor.indexOf(this.questionIndex) === -1 ? 
+					this.wrongColor.push(this.questionIndex) : this.wrongColor
+				
+				localStorage.setItem('wrong', JSON.stringify(this.wrongColor))
 			}
+			console.log('correct: ' + this.correctColor)
+			console.log('wrong: '  + this.wrongColor)
 		},
 		tryAgain() {
 			this.isCorrect = true
 		}
 	}
-}
+ }
 </script>
 
 <style lang="scss">
@@ -108,6 +120,7 @@ html, body {
 
 	.container {
 		max-width: 800px;
+		height: 90vh;
 		margin: auto;
 		text-align: left;
 		position: relative;
@@ -148,7 +161,7 @@ html, body {
 		.answer-item {
 			background-color: #fff;
 			box-sizing: border-box;
-			padding: 12px 20px;
+			padding: 20px;
 			margin-bottom: 10px;
 			border-radius: 16px;
 			-webkit-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
@@ -158,6 +171,7 @@ html, body {
 			transition: .5s;
 
 			@media (max-width: 768px) {
+				padding: 12px 20px;
 				font-size: 0.85rem;
 			}
 
@@ -235,12 +249,16 @@ html, body {
 	.digital {
 		width: 100px;
 		margin: auto;
-		margin-top: 20px;
+		margin-top: 180px;
 		margin-bottom: 20px;
 		display: flex;
 		justify-content: space-around;
 		font-size: 1.5rem;
 		font-weight: bold;
+
+		@media (max-width: 768px) {
+			margin-top: 20px;
+		}
 	}
 
 	.progress-bar {
