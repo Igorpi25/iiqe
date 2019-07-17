@@ -3,7 +3,7 @@
 		<div class="container">
 			<div>
 				<h3 class="title">{{ name }}</h3>
-				<p class="subtitle">Long Term Insurance Examination</p>
+				<p class="subtitle">{{ subtitle }}</p>
 				<div class="question" v-for="(q, index) in quizList" :key="index">
 					<div v-if="questionIndex===index">
 						<div class="question-item" v-html="q.question"></div>
@@ -35,7 +35,11 @@
 				</div>
 				<div class="progress-bar">
 					<div class="pending" 
-						:class="[{ good: correctColor.indexOf(index) !== -1 }, { bad: wrongColor.indexOf(index) !== -1 }, { current: questionIndex == index}]" 
+						:class="[
+							{ good: correctColor.indexOf(index) !== -1 }, 
+							{ bad: wrongColor.indexOf(index) !== -1 }, 
+							{ current: questionIndex == index}
+						]" 
 						v-for="(n, index) in quizList" :key="index">
 					</div>
 				</div>
@@ -49,6 +53,7 @@ import { setTimeout } from 'timers';
 export default {
 	props: {
 		name: String,
+		subtitle: String,
 		quizList: Array,
 		progressKey: String,
 		progressWrong: String,
@@ -85,12 +90,13 @@ export default {
 				setTimeout(() => {
 					this.congrats = false
 					this.questionIndex++
-					localStorage.setItem(this.progressKey, this.questionIndex)	
-				}, 1600)
 
-				if(this.questionIndex == this.quizList.length) {
-					this.questionIndex = 0	
-				}
+					localStorage.setItem(this.progressKey, this.questionIndex)	
+
+					if(this.questionIndex === this.quizList.length) {
+						this.questionIndex = 0	
+					}
+				}, 1600)
 			}
 			else {
 				this.isCorrect = false
@@ -99,8 +105,6 @@ export default {
 				
 				localStorage.setItem(`${this.progressWrong}wrong`, JSON.stringify(this.wrongColor))
 			}
-			console.log('correct: ' + this.correctColor)
-			console.log('wrong: '  + this.wrongColor)
 		},
 		tryAgain() {
 			this.isCorrect = true
@@ -274,10 +278,8 @@ html, body {
 		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(20, 1fr);
-		grid-template-rows: none;
 		grid-column-gap: 5px;
 		grid-row-gap: 5px;
-		align-items: end;
 
 		.pending, .good, .bad {
 			width: 100%;
@@ -299,7 +301,5 @@ html, body {
 		}
 	}
 }
-
-
 </style>
 

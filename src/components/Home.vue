@@ -8,7 +8,7 @@
             <div class="paper-item">
                 <router-link to="/paper1">
                     <h2>Paper 1</h2>
-                    <p>Long Term Insurance Examination</p>
+                    <p>Principles and Practice of Insurance</p>
                 </router-link>
                 <div class="restart" @click="restart('paper1')">restart</div>
                 <div class="progress">{{ this.progressPaper1 }} / 75</div>

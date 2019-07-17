@@ -18,6 +18,7 @@ export default new Router({
             component: () => import('@/components/Quiz.vue'),
             props: {
                 name: 'Paper 1',
+                subtitle: 'Principles and Practice of Insurance',
                 quizList: quiz_1,
                 progressKey: 'paper_1',
                 progressWrong: 'p1_',
@@ -30,10 +31,11 @@ export default new Router({
             component: () => import('@/components/Quiz.vue'),
             props: {
                 name: 'Paper 3',
+                subtitle: 'Long Term Insurance Examination',
                 quizList: quiz_3,
                 progressKey: 'paper_3',
                 progressWrong: 'p3_',
-                Correct: 'p3_'
+                progressCorrect: 'p3_'
             }
         }
     ]
