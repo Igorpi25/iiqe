@@ -1,4 +1,4 @@
-export const quiz =
+export const quiz_1 =
   [
     {//1
       question:
@@ -46,7 +46,7 @@ export const quiz =
           literal: "c"
         },
         {
-          text: "inancial , Physical and Emotional",
+          text: "Financial , Physical and Emotional",
           literal: "d"
         }
       ]
@@ -1754,6 +1754,1147 @@ export const quiz =
         },
         {
           text: "to request for strict proof and confirmation on every tiny details",
+          literal: "d"
+        }
+      ]
+    }
+  ]
+
+export const quiz =
+  [
+    {//1
+      question:
+        `Which of the following principles of insurance can be an insurable interest in the legal description is correct?`,
+      answers: [
+        {
+          text: "each own a married man has an unlimited insurable interest in",
+          literal: "a",
+          correct: true
+        },
+        {
+          text: "a person for their insurable interest is limited to their own assets",
+          literal: "b"
+        },
+        {
+          text: "a person for their insurable interest is limited to their income",
+          literal: "c"
+        },
+        {
+          text: "a person for their insurable interest to others with an insurable interest in some of the same",
+          literal: "d"
+        }
+      ]
+    },
+    {//2
+      question:
+        `Which of the following statements, or which is not correct?`,
+      answers: [
+        {
+          text: "can be transferred to a life insurance policy with the insured has no insurable interest in the lives of people",
+          literal: "a"
+        },
+        {
+          text: "can be transferred to a life insurance policy with the insured has no insurable interest in life, but life must not bankrupt insured",
+          literal: "b",
+          correct: true
+        },
+        {
+          text: "the transferee may be one or a few people, and the insured has not an insurable interest in life",
+          literal: "c"
+        },
+        {
+          text: "None of the above",
+          literal: "d"
+        }
+      ]
+    },
+    {//3
+      question:
+        `The utmost good faith of the insurance principle, which of the following is certainly an important fact?`,
+      answers: [
+        {
+          text: "of the real objects (property) insurance-related facts",
+          literal: "a"
+        },
+        {
+          text: "not disclose the fact to the insurance",
+          literal: "b"
+        },
+        {
+          text: "may influence a prudent underwriters, the name of the insured risk premium or conditions set",
+          literal: "c"
+        },
+        {
+          text: "every circumstance which would influence the judgment of a prudent insurer in fixing the premium, or determining whether he will accept the risk",
+          literal: "d",
+          correct: true
+        }
+      ]
+    },
+    {//4
+      question:
+        `Following that a relationship with life insurance is less significant?
+        (i) Indemnity
+        (ii) Subrogation
+        (iii) Contribution
+        (iv) Insurable interest`,
+      answers: [
+        {
+          text: "(i), (ii), (iii)",
+          literal: "a",
+          correct: true
+        },
+        {
+          text: "(i), (iii), (iv)",
+          literal: "b"
+        },
+        {
+          text: "(i), (ii), (iv)",
+          literal: "c"
+        },
+        {
+          text: "(ii), (iii), (iv)",
+          literal: "d"
+        }
+      ]
+    },
+    {//5
+      question:
+        `Which of the following characteristics of the Natural and Level Premium (Pricing) Systems?`,
+      answers: [
+        {
+          text: "who has no insurance premiums implementation of natural",
+          literal: "a"
+        },
+        {
+          text: "premiums will grow up with the insured's age, but increased",
+          literal: "b"
+        },
+        {
+          text: "will be detrimental to the insured person's choice",
+          literal: "c"
+        },
+        {
+          text: "above are all",
+          literal: "d",
+          correct: true
+        }
+      ]
+    },
+    {//6
+      question:
+        `Group life insurance contracts commonly referred to as:`,
+      answers: [
+        {
+          text: "all insurance contracts",
+          literal: "a"
+        },
+        {
+          text: "master group insurance contract",
+          literal: "b",
+          correct: true
+        },
+        {
+          text: "Key employee insurance contract",
+          literal: "c"
+        },
+        {
+          text: "Integrated group insurance contract",
+          literal: "d"
+        }
+      ]
+    },
+    {//7
+      question:
+        `For group insurance schemes, a qualified person who has been refused to participate in the insurance plan, and the future they wish to participate:`,
+      answers: [
+        {
+          text: "impossible",
+          literal: "a"
+        },
+        {
+          text: "does not require any formalities can be achieved under",
+          literal: "b"
+        },
+        {
+          text: "Only up to pay the premiums due but not paid before they can be",
+          literal: "c"
+        },
+        {
+          text: "can be done, but must provide proof of insurability",
+          literal: "d",
+          correct: true
+        }
+      ]
+    },
+    {//8
+      question:
+        `Mr Lok recently graduated, there is not much money to buy insurance, but it has to get married next year. Why is convertible term life insurance is worth considering his options?`,
+      answers: [
+        {
+          text: "convertible term insurance premium is quite cheap, but also give flexibility to the insured person can choose not required to provide proof of insurability to convert the case of joint life insurance plan",
+          literal: "a"
+        },
+        {
+          text: "convertible term life insurance the insured to give flexibility, you can choose not required to provide proof of insurability to convert the case of the more expensive plan",
+          literal: "b"
+        },
+        {
+          text: "Convertible term insurance premium is quite cheap, but also give flexibility to the insured person can choose not required to provide proof of insurability to convert the policy to a permanent plan",
+          literal: "c",
+          correct: true
+        },
+        {
+          text: "For the case of married soon, convertible term insurance is the most suitable for him.",
+          literal: "d"
+        }
+      ]
+    },
+    {//9
+      question:
+        `Which of the following statements about mortgage redemption insurance is not correct?`,
+      answers: [
+        {
+          text: "Same as mortgage indemnity insurance",
+          literal: "a",
+          correct: true
+        },
+        {
+          text: "in payment of the death of the unpaid loan balance",
+          literal: "b"
+        },
+        {
+          text: "is usually the name of husband and wife jointly purchased",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//10
+      question:
+        `Increasing term life insurance features may include:`,
+      answers: [
+        {
+          text: "an inflation used to be consistent with the interests of the facilities",
+          literal: "a"
+        },
+        {
+          text: "annual benefit is calculated under the agreement or to increase",
+          literal: "b"
+        },
+        {
+          text: "the amount of insurance premiums generally increase following the increase",
+          literal: "c"
+        },
+        {
+          text: "all of the above",
+          literal: "d",
+          correct: true
+        }
+      ]
+    },
+    {//11
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//12
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//13
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//14
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//15
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//16
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//17
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//18
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//19
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//20
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//21
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//22
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//23
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//24
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//25
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//26
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//27
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//28
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//29
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//30
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//31
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//32
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//33
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//34
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//35
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//36
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//37
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//38
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//39
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//40
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//41
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//42
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//43
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//44
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//45
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//46
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//47
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//48
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//49
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//50
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c"
+        },
+        {
+          text: "",
+          literal: "d"
+        }
+      ]
+    },
+    {//
+      question:
+        ``,
+      answers: [
+        {
+          text: "",
+          literal: "a"
+        },
+        {
+          text: "",
+          literal: "b"
+        },
+        {
+          text: "",
+          literal: "c",
+          correct: true
+        },
+        {
+          text: "",
           literal: "d"
         }
       ]
