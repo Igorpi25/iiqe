@@ -18,7 +18,8 @@ export default new Router({
             component: () => import('@/components/Quiz.vue'),
             props: {
                 name: 'Paper 1',
-                quizList: quiz_1
+                quizList: quiz_1,
+                progressKey: 'paper_1'
             }
         },
         {
@@ -27,7 +28,8 @@ export default new Router({
             component: () => import('@/components/Quiz.vue'),
             props: {
                 name: 'Paper 3',
-                quizList: quiz_3
+                quizList: quiz_3,
+                progressKey: 'paper_3'
             }
         }
     ]

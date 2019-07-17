@@ -22,7 +22,19 @@
 				<div class="err correct">{{ correct }}</div>
 				<div class="try-again" @click="tryAgain"><p>try again</p></div>
 			</div>
-			<div class="progress-bar">{{questionIndex + 1}} / {{quizList.length}}</div>
+			<div class="counter">{{questionIndex + 1}} / {{quizList.length}}</div>
+			<div v-if="!congrats && isCorrect">
+				<div class="digital">
+				<div class="digital__correct" style="color:#43B136">{{ correctColor.length }}</div>
+					<div class="digital__wrong" style="color:#FF4848">{{ wrongColor.size }}</div>
+				</div>
+				<div class="progress-bar">
+					<div class="pending" 
+						:class="[{ good: correctColor.indexOf(index) !== -1 }, { bad: wrongColor.has(index) }, { current: questionIndex == index}]" 
+						v-for="(n, index) in quizList" :key="index">
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -32,15 +44,18 @@ import { setTimeout } from 'timers';
 export default {
 	props: {
 		name: String,
-		quizList: Array
+		quizList: Array,
+		progressKey: String
 	},
 	data() {
 		return {
-			questionIndex: 0,
+			questionIndex: parseInt(localStorage.getItem(this.progressKey)) || 0,
 			isCorrect: true,
 			congrats: false,
 			correct: '',
 			picked: '',	
+			correctColor: [],
+			wrongColor: new Set()
 		}
 	},
 	methods: {
@@ -52,17 +67,25 @@ export default {
 
 			if(obj.hasOwnProperty('correct')) {
 				this.congrats = true
+				this.isWrong = false
+
+				this.correctColor.push(this.questionIndex)
+				console.log(this.correctColor)
 
 				setTimeout(() => {
 					this.congrats = false
 					this.questionIndex++
-				}, 2000)
+					localStorage.setItem(this.progressKey, this.questionIndex)	
+				}, 1600)
 
-				if(this.questionIndex == this.quizList.length) 
-					this.questionIndex = 0
+				if(this.questionIndex == this.quizList.length) {
+					this.questionIndex = 0	
+				}
 			}
 			else {
 				this.isCorrect = false
+				this.wrongColor.add(this.questionIndex)
+				console.log(this.wrongColor)
 			}
 		},
 		tryAgain() {
@@ -125,7 +148,7 @@ html, body {
 		.answer-item {
 			background-color: #fff;
 			box-sizing: border-box;
-			padding: 20px;
+			padding: 12px 20px;
 			margin-bottom: 10px;
 			border-radius: 16px;
 			-webkit-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
@@ -188,6 +211,8 @@ html, body {
 			height: 400px;
 			line-height: 400px;
 			text-align: center;
+			color: #FF4848;
+			font-size: 1.5rem;
 			cursor: pointer;
 			transition: .3s;
 
@@ -197,15 +222,61 @@ html, body {
 			}
 
 			&:hover {
-				color: #FF4848;
 				background: rgba(100,100,100,0.1);
 			}
 		}
 	}
-	.progress-bar {
+	.counter {
 		position: absolute;
 		top: 0;
 		right: 20px;
+	}
+
+	.digital {
+		width: 100px;
+		margin: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		display: flex;
+		justify-content: space-around;
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	.progress-bar {
+		// $w: 100%;
+		// $k: 8px;
+		// $count: 20px;
+		// $alpha: calc($w / $count);
+		// $delta: calc($alpha / $k * 2);
+		// $beta: $delta;
+
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(20, 1fr);
+		grid-template-rows: none;
+		grid-column-gap: 5px;
+		grid-row-gap: 5px;
+		align-items: end;
+
+		.pending, .good, .bad {
+			width: 100%;
+			height: 5px;
+			background-color: #666666;
+
+			@media(max-width: 768px) {
+				height: 3px;
+			}
+		}
+		.good {
+			background-color: #43B136;
+		}
+		.bad {
+			background-color: #FF4848;
+		}
+		.current {
+			background-color: #1A8DFF;
+		}
 	}
 }
 
