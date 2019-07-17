@@ -1,50 +1,62 @@
 <template>
 	<div class="quiz-container-fluid">
 		<div class="container">
-			<h3 class="title">Paper 3</h3>
+			<h3 class="title">{{ name }}</h3>
 			<p class="subtitle">Long Term Insurance Examination</p>
-			<div class="question" v-for="(q, index) in quiz" :key="index">
-				<div v-if="questionIndex===index">
+			<div class="question" v-for="(q, index) in quizList" :key="index">
+				<div v-if="questionIndex===index&&!congrats">
 					<div class="question-item" v-html="q.question"></div>
 					<div class="answer" v-if="isCorrect">
-						<div class="answer-item"  @click="next(a)" v-for="a in q.answers" :key="a.text">
+						<div class="answer-item" @click="next(a)" v-for="a in q.answers" :key="a.text">
 							<div>({{ a.literal }}) {{ a.text }}</div>	
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="congrats" v-show="congrats">Yes!</div>
 			<div class="error" v-show="!isCorrect">
 				<div class="err wrong">{{ picked }}</div>
 				<div class="err correct">{{ correct }}</div>
 				<div class="try-again" @click="tryAgain"><p>try again</p></div>
 			</div>
-			<div class="progress-bar">{{questionIndex + 1}} / {{quiz.length}}</div>
+			<div class="progress-bar">{{questionIndex + 1}} / {{quizList.length}}</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import { quiz as quizList } from "../quizList"
+//import { quiz_1 as quizList } from "../quizList"
+import { setTimeout } from 'timers';
 export default {
+	props: {
+		name: String,
+		quizList: Array
+	},
 	data() {
 		return {
 			questionIndex: 0,
 			isCorrect: true,
+			congrats: false,
 			correct: '',
 			picked: '',	
-			quiz: quizList,
+			//quiz: quizList,
 		}
 	},
 	methods: {
 		next(obj) {	
 			if(obj.hasOwnProperty('correct')) {
 				this.questionIndex++
-				if(this.questionIndex == this.quiz.length) this.questionIndex = 0
+
+				this.congrats = true
+				setTimeout(() => {this.congrats = false}, 700)
+
+				if(this.questionIndex == this.quizList.length) 
+					this.questionIndex = 0
 			}
 			else {
 				this.picked = `(${obj.literal}) ${obj.text}`
 
-				let correct = this.quiz[this.questionIndex].answers.filter(corr => corr.hasOwnProperty('correct'))
+				let correct = this.quizList[this.questionIndex].answers.filter(corr => corr.hasOwnProperty('correct'))
 				this.correct = `(${correct[0].literal}) ${correct[0].text}`
 
 				this.isCorrect = false
@@ -130,15 +142,29 @@ html, body {
 			}
 		}
 
+		.congrats {
+			height: 600px;
+			transform: translateY(50%);	
+			font-size: 2rem;
+			font-weight: 600;
+			text-align: center;
+			color: #43B136;
+
+			@media (max-width: 768px) {
+				height: 300px;
+			}
+		}
+
 		.err {
 			width: 100%;
-			height: 50px;
-			line-height: 50px;
+			min-height: auto;
+			padding: 10px 0;
+			vertical-align: middle;
 			text-align: center;
 			color: #fff;
 		}
 		.wrong {
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 			background-color: #FF4848;
 		}
 		.correct {
@@ -164,7 +190,7 @@ html, body {
 	}
 	.progress-bar {
 		position: absolute;
-		top: 20px;
+		top: 0;
 		right: 20px;
 	}
 }

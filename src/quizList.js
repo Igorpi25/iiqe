@@ -1760,7 +1760,7 @@ export const quiz_1 =
     }
   ]
 
-export const quiz =
+export const quiz_3 =
   [
     {//1
       question:

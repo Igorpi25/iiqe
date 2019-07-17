@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    <Quiz />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Home from './components/Home.vue'
 import Quiz from './components/Quiz.vue'
-
 export default {
   name: 'app',
   components: {
+    Home,
     Quiz
   }
 }
