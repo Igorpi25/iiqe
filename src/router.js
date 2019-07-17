@@ -19,7 +19,9 @@ export default new Router({
             props: {
                 name: 'Paper 1',
                 quizList: quiz_1,
-                progressKey: 'paper_1'
+                progressKey: 'paper_1',
+                progressWrong: 'p1_',
+                progressCorrect: 'p1_'
             }
         },
         {
@@ -29,7 +31,9 @@ export default new Router({
             props: {
                 name: 'Paper 3',
                 quizList: quiz_3,
-                progressKey: 'paper_3'
+                progressKey: 'paper_3',
+                progressWrong: 'p3_',
+                Correct: 'p3_'
             }
         }
     ]
