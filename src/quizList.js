@@ -2546,7 +2546,7 @@ export const quiz_3 =
           literal: "a"
         },
         {
-          text: "annuity",
+          text: "term",
           literal: "b"
         },
         {
