@@ -24,7 +24,7 @@
 			<div class="error" v-show="!isCorrect">
 				<div class="err wrong">{{ picked }}</div>
 				<div class="err correct">{{ correct }}</div>
-				<div class="try-again" @click="tryAgain"><p><icon-base iconColor="#FF4848" width="48" height="48"><icon-refresh /></icon-base></p></div>
+				<div class="try-again" @click="tryAgain"><p>try again</p></div>
 			</div>
 			<div class="counter">{{questionIndex + 1}} / {{quizList.length}}</div>
 
@@ -101,6 +101,9 @@ export default {
 
 					if(this.questionIndex === this.quizList.length) {
 						this.questionIndex = 0	
+
+						localStorage.removeItem(this.progressKey)
+						localStorage.removeItem(`${this.progressWrong}wrong`)
 					}
 				}, 1600)
 			}

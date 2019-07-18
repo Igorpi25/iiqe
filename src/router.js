@@ -37,6 +37,10 @@ export default new Router({
                 progressWrong: 'p3_',
                 progressCorrect: 'p3_'
             }
+        },
+        {
+            path: '*',
+            component: () => import('@/components/Quiz.vue')
         }
     ]
 })

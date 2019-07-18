@@ -12,6 +12,10 @@
                 </router-link>
                 <div class="restart" @click="restart('paper1')"><icon-base iconColor="#FF4848" width="24" height="24"><icon-refresh /></icon-base></div>
                 <div class="progress">{{ this.progressPaper1 }} / 75</div>
+                <div class="progress-counter">
+                    <div class="progress-counter__correct">{{ p1_correct.length }}</div>
+                    <div class="progress-counter__wrong">{{ p1_wrong.length }}</div>
+                </div>
             </div>
             <div class="paper-item">
                 <router-link to="/paper3">
@@ -20,6 +24,10 @@
                 </router-link>
                 <div class="restart" @click="restart('paper3')"><icon-base iconColor="#FF4848" width="24" height="24"><icon-refresh /></icon-base></div>
                 <div class="progress">{{ this.progressPaper3 }} / 50</div>
+                <div class="progress-counter">
+                    <div class="progress-counter__correct">{{ p3_correct.length }}</div>
+                    <div class="progress-counter__wrong">{{ p3_wrong.length }}</div>
+                </div>
             </div>
         </div>
     </div>
@@ -35,13 +43,13 @@ export default {
     },
     data() {
         return {
-            progressPaper1: 0,
-            progressPaper3: 0
+            progressPaper1: parseInt(localStorage.getItem('paper_1')) + 1 || 1,
+            progressPaper3: parseInt(localStorage.getItem('paper_3')) + 1 || 1,
+            p1_correct: JSON.parse(localStorage.getItem('p1_correct')) || [],
+            p3_correct: JSON.parse(localStorage.getItem('p3_correct')) || [],
+            p1_wrong: JSON.parse(localStorage.getItem('p1_wrong')) || [],
+            p3_wrong: JSON.parse(localStorage.getItem('p3_wrong')) || []
         }
-    },
-    mounted() {
-        this.progressPaper1 = parseInt(localStorage.getItem('paper_1')) || 0
-        this.progressPaper3 = parseInt(localStorage.getItem('paper_3')) || 0
     },
     methods: {
         restart(paperNum) {
@@ -144,6 +152,23 @@ a {
                 position: absolute;
                 top: 40px;
                 right: 20px;
+            }
+
+            .progress-counter {
+                width: 40px;
+                display: flex;
+                justify-content: space-around;
+                position: absolute;
+                right: 20px;
+                bottom: 30px;
+                font-weight: bold;
+
+                &__correct {
+                    color: #43B136;
+                }
+                &__wrong {
+                    color: #FF4848;
+                }
             }
         }
     }
