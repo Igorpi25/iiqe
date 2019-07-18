@@ -146,6 +146,11 @@ a {
 				padding-right: 10px;
 				font-size: 0.85rem;
             }
+
+			@media (max-height: 768px) {
+				//max-height: 150px;
+                padding: 10px 20px;
+            }
             
             p {
                 font-family: 'SFProDisplay-Light', 'sans-serif';
@@ -188,13 +193,8 @@ a {
         font-family: 'MyriadPro-Regular', 'sans-serif';
         font-size: 1rem;
         max-width: 800px;
-        position: absolute;
-        bottom: -20px;
-        left: 50%;
-        transform: translateX(-50%);
 
         @media (max-width: 768px) {
-            width: 300px;
             font-size: 0.75rem;
         }
     }

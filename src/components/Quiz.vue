@@ -8,7 +8,7 @@
 					<div v-if="questionIndex===index">
 						<div class="question-item" v-html="q.question"></div>
 						<div class="answer" v-if="isCorrect&&!congrats">
-							<div class="answer-item" @click="next(a)" v-for="a in q.answers" :key="a.text">
+							<div class="answer-item" @click="next(a)" v-for="(a, idx) in q.answers" :key="idx">
 								<div>({{ a.literal }}) {{ a.text }}</div>	
 							</div>
 						</div>
