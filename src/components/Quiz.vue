@@ -326,7 +326,6 @@ html, body {
 
 
         @media (max-width: 768px) {
-			width: 300px;
             font-size: 0.75rem;
         }
     }
