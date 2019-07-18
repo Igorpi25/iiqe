@@ -8,8 +8,8 @@
 					<div v-if="questionIndex===index">
 						<div class="question-item" v-html="q.question"></div>
 						<div class="answer" v-if="isCorrect&&!congrats">
-							<div class="answer-item" @click="next(a)" v-for="(a, idx) in randomize" :key="idx">
-								<div>({{ a.literal }}) {{ a.text }}</div>	
+							<div class="answer-item" @click="next(a, idx)" v-for="(a, idx) in randomize" :key="idx">
+								<div>({{ options[idx] }}) {{ a.text }}</div>	
 							</div>
 						</div>
 					</div>
@@ -74,20 +74,32 @@ export default {
 			correct: '',
 			picked: '',	
 			correctColor: JSON.parse(localStorage.getItem(`${this.progressCorrect}correct`)) || [],
-			wrongColor: JSON.parse(localStorage.getItem(`${this.progressWrong}wrong`)) || []
+			wrongColor: JSON.parse(localStorage.getItem(`${this.progressWrong}wrong`)) || [],
+			options: ['a', 'b', 'c', 'd']
 		}
 	},
 	computed :{
 		randomize() {
+			// this.quizList[this.questionIndex].answers.forEach(answer => {
+			// 	if(answer.hasOwnProperty('fixed_position')) {
+
+			// 	}
+			// })
 			return this.quizList[this.questionIndex].answers.sort((a, b) => Math.random() - 0.5)
 		}
 	},
 	methods: {
-		next(obj) {	
-			let correct = this.quizList[this.questionIndex].answers.filter(corr => corr.hasOwnProperty('correct'))
-			this.correct = `(${correct[0].literal}) ${correct[0].text}`
-
-			this.picked = `(${obj.literal}) ${obj.text}`
+		next(obj, optionIndex) {	
+			let correctIndex
+			let correct = this.quizList[this.questionIndex].answers.filter((corr, index) => {
+				if(corr.hasOwnProperty('correct')) {
+					correctIndex = index
+					return corr
+				}	
+			})
+			this.correct = `(${this.options[correctIndex]}) ${correct[0].text}`
+			
+			this.picked = `(${this.options[optionIndex]}) ${obj.text}`
 
 			if(obj.hasOwnProperty('correct')) {
 				this.congrats = true
