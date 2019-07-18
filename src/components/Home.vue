@@ -29,6 +29,7 @@
                     <div class="progress-counter__wrong">{{ p3_wrong.length }}</div>
                 </div>
             </div>
+            <p class="copyright">&copy;Zennnn / All Rights Reserved</p>
         </div>
     </div>
 </template>
@@ -89,6 +90,7 @@ a {
 
     .papers {
         max-width: 800px;
+        height: 100vh;
 		margin: auto;
 		text-align: left;
 		position: relative;
@@ -138,7 +140,11 @@ a {
 			@media (max-width: 768px) {
 				padding-right: 10px;
 				font-size: 0.85rem;
-			}
+            }
+            
+            p {
+                font-family: 'SFProDisplay-Light', 'sans-serif';
+            }
 
             .restart {
                 width: 40px;
@@ -170,6 +176,22 @@ a {
                     color: #FF4848;
                 }
             }
+        }
+    }
+
+     .copyright {
+        font-family: 'MyriadPro-Regular', 'sans-serif';
+        font-size: 1rem;
+        max-width: 800px;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media (max-width: 768px) {
+            width: 300px;
+            transform: translateX(-25%);
+            font-size: 0.75rem;
         }
     }
 }

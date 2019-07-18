@@ -45,6 +45,7 @@
 				</div>
 			</div>
 		</div>
+		<p class="copyright">&copy;Zennnn / All Rights Reserved</p>
 	</div>
 </template>
 
@@ -153,6 +154,8 @@ html, body {
 		}
 
 		.subtitle {
+			font-family: 'SFProDisplay-Light', 'sans-serif';
+
 			@media (max-width: 768px) {
 				font-size: 0.85rem;
 			}
@@ -181,6 +184,7 @@ html, body {
 			box-sizing: border-box;
 			padding: 20px;
 			margin-bottom: 10px;
+			font-weight: bold;
 			border-radius: 16px;
 			-webkit-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
 			-moz-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
@@ -312,6 +316,22 @@ html, body {
 			background-color: #1A8DFF;
 		}
 	}
+
+	.copyright {
+        font-family: 'MyriadPro-Regular', 'sans-serif';
+        font-size: 1rem;
+		max-width: 800px;
+		margin-bottom: 0;
+		position: absolute;
+		bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media (max-width: 768px) {
+			width: 300px;
+            font-size: 0.75rem;
+        }
+    }
 }
 </style>
 
