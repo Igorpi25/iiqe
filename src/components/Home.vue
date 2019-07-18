@@ -192,7 +192,8 @@ a {
      .copyright {
         font-family: 'MyriadPro-Regular', 'sans-serif';
         font-size: 1rem;
-        max-width: 800px;
+        max-width: 100%;
+        text-align: center;
 
         @media (max-width: 768px) {
             font-size: 0.75rem;
