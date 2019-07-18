@@ -73,6 +73,9 @@ export default {
 
 
 <style lang="scss">
+html {
+    overflow-y: auto;
+}
 a {
     text-decoration: none;
     color: #000;
@@ -86,17 +89,16 @@ a {
     max-width: 100vw;
 	height: 100vh;
     padding: 20px;	
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
-	background-color: #F5F6FC;
+    background-color: #F5F6FC;
+    overflow-y: auto;
 
     .papers {
         max-width: 800px;
         height: 100vh;
         margin: auto;
 		text-align: left;
-		position: relative;
+        position: relative;
+        overflow-y: auto;
 
        .header {
            display: flex;
@@ -193,7 +195,6 @@ a {
 
         @media (max-width: 768px) {
             width: 300px;
-            transform: translateX(-25%);
             font-size: 0.75rem;
         }
     }
