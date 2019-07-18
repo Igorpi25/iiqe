@@ -8,7 +8,7 @@
 					<div v-if="questionIndex===index">
 						<div class="question-item" v-html="q.question"></div>
 						<div class="answer" v-if="isCorrect&&!congrats">
-							<div class="answer-item" @click="next(a)" v-for="(a, idx) in q.answers" :key="idx">
+							<div class="answer-item" @click="next(a)" v-for="(a, idx) in randomize" :key="idx">
 								<div>({{ a.literal }}) {{ a.text }}</div>	
 							</div>
 						</div>
@@ -75,6 +75,11 @@ export default {
 			picked: '',	
 			correctColor: JSON.parse(localStorage.getItem(`${this.progressCorrect}correct`)) || [],
 			wrongColor: JSON.parse(localStorage.getItem(`${this.progressWrong}wrong`)) || []
+		}
+	},
+	computed :{
+		randomize() {
+			return this.quizList[this.questionIndex].answers.sort((a, b) => Math.random() - 0.5)
 		}
 	},
 	methods: {
