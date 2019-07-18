@@ -35,7 +35,8 @@ export const quiz_1 =
         {
           text: "Financial and Physical",
           literal: "a",
-          correct: true
+          correct: true,
+          fixed_position: 1
         },
         {
           text: "Emotional and Physical",
@@ -47,7 +48,8 @@ export const quiz_1 =
         },
         {
           text: "Financial , Physical and Emotional",
-          literal: "d"
+          literal: "d",
+          fixed_position: 4
         }
       ]
     },
@@ -57,7 +59,8 @@ export const quiz_1 =
       answers: [
         {
           text: "All risks are insurable",
-          literal: "a"
+          literal: "a",
+          fixed_position: 1
         },
         {
           text: "The only remedy for any kind of risk is insurance",
@@ -84,20 +87,24 @@ export const quiz_1 =
       answers: [
         {
           text: "i, ii and iii",
-          literal: "a"
+          literal: "a",
+          fixed_position: 1
         },
         {
           text: "i, ii and iv",
           literal: "b",
-          correct: true
+          correct: true,
+          fixed_position: 2
         },
         {
           text: "ii, iii and iv",
-          literal: "c"
+          literal: "c",
+          fixed_position: 3
         },
         {
           text: "All of above",
-          literal: "d"
+          literal: "d",
+          fixed_position: 4
         }
       ]
     },
@@ -120,7 +127,8 @@ export const quiz_1 =
         {
           text: "None of the above",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -138,12 +146,14 @@ export const quiz_1 =
         },
         {
           text: "speculative risk, from the banker’s point of view",
-          literal: "c"
+          literal: "c",
+          fixed_position: 3
         },
         {
           text: "All of the above",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -308,7 +318,8 @@ export const quiz_1 =
         },
         {
           text: "All of the above",
-          literal: "d"
+          literal: "d",
+          fixed_position: 4
         }
       ]
     },
@@ -470,7 +481,8 @@ export const quiz_1 =
         {
           text: "All of the above",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -516,7 +528,8 @@ export const quiz_1 =
         },
         {
           text: "All of the above",
-          literal: "d"
+          literal: "d",
+          fixed_position: 4
         }
       ]
     },
@@ -635,7 +648,8 @@ export const quiz_1 =
         {
           text: "All of the above",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -777,7 +791,8 @@ export const quiz_1 =
         {
           text: "All of the above",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -1079,7 +1094,8 @@ export const quiz_1 =
         {
           text: "All of the above",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -1194,7 +1210,8 @@ export const quiz_1 =
         {
           text: "Both A and B are correct",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -1217,7 +1234,8 @@ export const quiz_1 =
         {
           text: "None of the above",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -1263,7 +1281,8 @@ export const quiz_1 =
         },
         {
           text: "All of the above",
-          literal: "d"
+          literal: "d",
+          fixed_position: 4
         }
       ]
     },
@@ -1286,7 +1305,8 @@ export const quiz_1 =
         {
           text: "All of the above",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -1382,7 +1402,8 @@ export const quiz_1 =
         },
         {
           text: "All of the above",
-          literal: "d"
+          literal: "d",
+          fixed_position: 4
         }
       ]
     },
@@ -1658,7 +1679,8 @@ export const quiz_1 =
         {
           text: "All of the above",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -1804,7 +1826,8 @@ export const quiz_3 =
         },
         {
           text: "None of the above",
-          literal: "d"
+          literal: "d",
+          fixed_position: 4
         }
       ]
     },
@@ -1877,7 +1900,8 @@ export const quiz_3 =
         {
           text: "above are all",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -1992,7 +2016,8 @@ export const quiz_3 =
         {
           text: "all of the above",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -2029,20 +2054,24 @@ export const quiz_3 =
       answers: [
         {
           text: "(i), (ii)",
-          literal: "a"
+          literal: "a",
+          fixed_position: 1
         },
         {
           text: "(i), (ii), (iii)",
-          literal: "b"
+          literal: "b",
+          fixed_position: 2
         },
         {
           text: "(i), (ii), (iv)",
           literal: "c",
-          correct: true
+          correct: true,
+          fixed_position: 3
         },
         {
           text: "(i), (ii), (iii), (iv)",
-          literal: "d"
+          literal: "d",
+          fixed_position: 4
         }
       ]
     },
@@ -2065,7 +2094,8 @@ export const quiz_3 =
         },
         {
           text: "above are not the characteristics of universal life",
-          literal: "d"
+          literal: "d",
+          fixed_position: 4
         }
       ]
     },
@@ -2203,7 +2233,8 @@ export const quiz_3 =
         {
           text: "above are not",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -2286,20 +2317,24 @@ export const quiz_3 =
       answers: [
         {
           text: "(i), (ii)",
-          literal: "a"
+          literal: "a",
+          fixed_position: 1
         },
         {
           text: "(i), (iv)",
-          literal: "b"
+          literal: "b",
+          fixed_position: 2
         },
         {
           text: "(i), (iii), (iv)",
-          literal: "c"
+          literal: "c",
+          fixed_position: 3
         },
         {
           text: "(i), (ii), (iii), (iv)",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -2322,7 +2357,8 @@ export const quiz_3 =
         {
           text: "any of the above but the total amount shall not exceed an amount equal to the amount of death benefit",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -2391,7 +2427,8 @@ export const quiz_3 =
         },
         {
           text: "above are not the answer",
-          literal: "d"
+          literal: "d",
+          fixed_position: 4
         }
       ]
     },
@@ -2429,19 +2466,23 @@ export const quiz_3 =
         {
           text: "(i), (ii), (iii)",
           literal: "a",
-          correct: true
+          correct: true,
+          fixed_position: 1
         },
         {
           text: "(i), (ii), (iv)",
-          literal: "b"
+          literal: "b",
+          fixed_position: 2
         },
         {
           text: "(i), (iii), (iv)",
-          literal: "c"
+          literal: "c",
+          fixed_position: 3
         },
         {
           text: "(i), (ii), (iii), (iv)",
-          literal: "d"
+          literal: "d",
+          fixed_position: 4
         }
       ]
     },
@@ -2487,7 +2528,8 @@ export const quiz_3 =
         },
         {
           text: "All of the above",
-          literal: "d"
+          literal: "d",
+          fixed_position: 4
         }
       ]
     },
@@ -2556,7 +2598,8 @@ export const quiz_3 =
         {
           text: "none of the above provisions apply to this",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -2626,7 +2669,8 @@ In Hong Kong life insurance policy for the automatic dividend option will store 
         {
           text: "above are correct",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
@@ -2763,20 +2807,24 @@ In Hong Kong life insurance policy for the automatic dividend option will store 
       answers: [
         {
           text: "(i), (ii)",
-          literal: "a"
+          literal: "a",
+          fixed_position: 1
         },
         {
           text: "(ii), (iii)",
-          literal: "b"
+          literal: "b",
+          fixed_position: 2
         },
         {
           text: "(ii), (iii), (iv)",
-          literal: "c"
+          literal: "c",
+          fixed_position: 3
         },
         {
           text: "(i), (ii), (iii), (iv)",
           literal: "d",
-          correct: true
+          correct: true,
+          fixed_position: 4
         }
       ]
     },
