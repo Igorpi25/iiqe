@@ -10,7 +10,7 @@
                     <h2>Paper 1</h2>
                     <p>Principles and Practice of Insurance</p>
                 </router-link>
-                <div class="restart" @click="restart('paper1')">restart</div>
+                <div class="restart" @click="restart('paper1')"><icon-base iconColor="#FF4848" width="24" height="24"><icon-refresh /></icon-base></div>
                 <div class="progress">{{ this.progressPaper1 }} / 75</div>
             </div>
             <div class="paper-item">
@@ -18,7 +18,7 @@
                     <h2>Paper 3</h2>
                     <p>Long Term Insurance Examination</p>
                 </router-link>
-                <div class="restart" @click="restart('paper3')">restart</div>
+                <div class="restart" @click="restart('paper3')"><icon-base iconColor="#FF4848" width="24" height="24"><icon-refresh /></icon-base></div>
                 <div class="progress">{{ this.progressPaper3 }} / 50</div>
             </div>
         </div>
@@ -26,7 +26,13 @@
 </template>
 
 <script>
+import IconBase from '@/components/icons/IconBase'
+import IconRefresh from '@/components/icons/IconRefresh'
 export default {
+    components: {
+        IconBase,
+        IconRefresh
+    },
     data() {
         return {
             progressPaper1: 0,
@@ -107,7 +113,7 @@ a {
                     width: 100%;
                 }
             }
-       }
+        }
 
         .paper-item {
             background-color: #fff;
@@ -127,6 +133,8 @@ a {
 			}
 
             .restart {
+                width: 40px;
+                height: 32px;
                 margin-top: 30px;
                 color: #FF4848;
                 cursor: pointer;

@@ -24,11 +24,11 @@
 			<div class="error" v-show="!isCorrect">
 				<div class="err wrong">{{ picked }}</div>
 				<div class="err correct">{{ correct }}</div>
-				<div class="try-again" @click="tryAgain"><p>try again</p></div>
+				<div class="try-again" @click="tryAgain"><p><icon-base iconColor="#FF4848" width="48" height="48"><icon-refresh /></icon-base></p></div>
 			</div>
 			<div class="counter">{{questionIndex + 1}} / {{quizList.length}}</div>
 
-			<div class="progress-footer" v-if="!congrats && isCorrect">
+			<div class="progress-footer">
 				<div class="digital">
 				<div class="digital__correct" style="color:#43B136">{{ correctColor.length }}</div>
 					<div class="digital__wrong" style="color:#FF4848">{{ wrongColor.length }}</div>
@@ -50,7 +50,13 @@
 
 <script>
 import { setTimeout } from 'timers';
+import IconBase from '@/components/icons/IconBase'
+import IconRefresh from '@/components/icons/IconRefresh'
 export default {
+	components: {
+		IconBase,
+		IconRefresh
+    },
 	props: {
 		name: String,
 		subtitle: String,
@@ -128,6 +134,9 @@ html, body {
 		max-width: 800px;
 		height: 90vh;
 		margin: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		text-align: left;
 		position: relative;
 
@@ -228,8 +237,8 @@ html, body {
 			background-color: #43B136;
 		}
 		.try-again {
-			height: 400px;
-			line-height: 400px;
+			height: 200px;
+			line-height: 200px;
 			text-align: center;
 			color: #FF4848;
 			font-size: 1.5rem;
