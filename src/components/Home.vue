@@ -29,8 +29,8 @@
                     <div class="progress-counter__wrong">{{ p3_wrong.length }}</div>
                 </div>
             </div>
-            <p class="copyright">&copy;Zennnn / All Rights Reserved</p>
         </div>
+        <p class="copyright">&copy;Zennnn / All Rights Reserved</p>
     </div>
 </template>
 
@@ -85,13 +85,16 @@ a {
 .home-container {
     max-width: 100vw;
 	height: 100vh;
-	padding: 20px;	
+    padding: 20px;	
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
 	background-color: #F5F6FC;
 
     .papers {
         max-width: 800px;
         height: 100vh;
-		margin: auto;
+        margin: auto;
 		text-align: left;
 		position: relative;
 

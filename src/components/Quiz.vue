@@ -44,8 +44,8 @@
 					</div>
 				</div>
 			</div>
+			<p class="copyright">&copy;Zennnn / All Rights Reserved</p>
 		</div>
-		<p class="copyright">&copy;Zennnn / All Rights Reserved</p>
 	</div>
 </template>
 
@@ -136,7 +136,7 @@ html, body {
 
 	.container {
 		max-width: 800px;
-		height: 90vh;
+		height: 100vh;
 		margin: auto;
 		display: flex;
 		flex-direction: column;
@@ -322,10 +322,8 @@ html, body {
         font-size: 1rem;
 		max-width: 800px;
 		margin-bottom: 0;
-		position: absolute;
-		bottom: -20px;
-        left: 50%;
-        transform: translateX(-50%);
+		text-align: center;
+
 
         @media (max-width: 768px) {
 			width: 300px;
