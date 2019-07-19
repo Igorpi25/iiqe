@@ -1,53 +1,70 @@
 <template>
-    <div class="home-container">
+    <div class="home-container" :class="{'home-container--dark': isDarkMode}">
         <div class="papers">
-           <div class="header">
+            <div class="header">
                 <h3 class="header__title">BERLOGGA-IIQE</h3>
                 <div class="header__logo"><img src="../assets/logo.png"></div>
-           </div>
-           <div class="toggle-container">
-                <div class="toggle">
-                    <p class="toggle__name">Random</p>
-                    <toggle-button 
-                        class="toggle__button"
-                        :width="75"
-                        :height="30" 
-                        :font-size="14"
-                        :value="true"
-                        :checked="false"
-                        :labels="{checked: 'on', unchecked: 'off'}"
-                        v-model="isRandom"
-                        @change="switchOrder"
-                    >
-                    </toggle-button>
+            </div>
+            
+            <div>
+                <div class="toggle-container">
+                    <div class="toggle">
+                        <p class="toggle__name">Random</p>
+                        <toggle-button 
+                            class="toggle__button"
+                            :width="75"
+                            :height="30" 
+                            :font-size="16"
+                            :checked="false"
+                            :labels="{checked: 'on', unchecked: 'off'}"
+                            v-model="isRandom"
+                            @change="switchOrder"
+                        >
+                        </toggle-button>
+                    </div>
+                    <div class="toggle">
+                        <p class="toggle__name">Dark mode</p>
+                        <toggle-button 
+                            class="toggle__button"
+                            :width="75"
+                            :height="30" 
+                            :font-size="16"
+                            :checked="false"
+                            :labels="{checked: 'on', unchecked: 'off'}"
+                            v-model="isDarkMode"
+                            @change="switchMode"
+                        >
+                        </toggle-button>
+                    </div>
+                </div>
+
+                <div class="paper-item" :class="{'paper-item--dark': isDarkMode}">
+                    <router-link to="/paper1">
+                        <h2>Paper 1</h2>
+                        <p>Principles and Practice of Insurance</p>
+                    </router-link>
+                    <div class="restart" @click="restart('paper1')"><icon-base iconColor="#1A8DFF" width="24" height="24"><icon-refresh /></icon-base></div>
+                    <div class="progress">{{ this.progressPaper1 }} / 75</div>
+                    <div class="progress-counter">
+                        <div class="progress-counter__correct">{{ p1_correct.length }}</div>
+                        <div class="progress-counter__wrong">{{ p1_wrong.length }}</div>
+                    </div>
+                </div>
+                <div class="paper-item" :class="{'paper-item--dark': isDarkMode}">
+                    <router-link to="/paper3">
+                        <h2>Paper 3</h2>
+                        <p>Long Term Insurance Examination</p>
+                    </router-link>
+                    <div class="restart" @click="restart('paper3')"><icon-base iconColor="#1A8DFF" width="24" height="24"><icon-refresh /></icon-base></div>
+                    <div class="progress">{{ this.progressPaper3 }} / 50</div>
+                    <div class="progress-counter">
+                        <div class="progress-counter__correct">{{ p3_correct.length }}</div>
+                        <div class="progress-counter__wrong">{{ p3_wrong.length }}</div>
+                    </div>
                 </div>
             </div>
-            <div class="paper-item">
-                <router-link to="/paper1">
-                    <h2>Paper 1</h2>
-                    <p>Principles and Practice of Insurance</p>
-                </router-link>
-                <div class="restart" @click="restart('paper1')"><icon-base iconColor="#1A8DFF" width="24" height="24"><icon-refresh /></icon-base></div>
-                <div class="progress">{{ this.progressPaper1 }} / 75</div>
-                <div class="progress-counter">
-                    <div class="progress-counter__correct">{{ p1_correct.length }}</div>
-                    <div class="progress-counter__wrong">{{ p1_wrong.length }}</div>
-                </div>
-            </div>
-            <div class="paper-item">
-                <router-link to="/paper3">
-                    <h2>Paper 3</h2>
-                    <p>Long Term Insurance Examination</p>
-                </router-link>
-                <div class="restart" @click="restart('paper3')"><icon-base iconColor="#1A8DFF" width="24" height="24"><icon-refresh /></icon-base></div>
-                <div class="progress">{{ this.progressPaper3 }} / 50</div>
-                <div class="progress-counter">
-                    <div class="progress-counter__correct">{{ p3_correct.length }}</div>
-                    <div class="progress-counter__wrong">{{ p3_wrong.length }}</div>
-                </div>
-            </div>
+            <p class="copyright">&copy;Zennnn / All Rights Reserved</p>
         </div>
-        <p class="copyright">&copy;Zennnn / All Rights Reserved</p>
     </div>
 </template>
 
@@ -63,7 +80,8 @@ export default {
     },
     data() {
         return {
-            isRandom: JSON.parse(localStorage.getItem('isRandom')) || false,
+            isRandom: JSON.parse(localStorage.getItem('random')) || false,
+            isDarkMode: JSON.parse(localStorage.getItem('darkMode')) || false,
             progressPaper1: parseInt(localStorage.getItem('paper_1')) + 1 || 1,
             progressPaper3: parseInt(localStorage.getItem('paper_3')) + 1 || 1,
             p1_correct: JSON.parse(localStorage.getItem('p1_correct')) || [],
@@ -75,8 +93,13 @@ export default {
     methods: {
         switchOrder() {
             if(this.isRandom) 
-                localStorage.setItem('isRandom', JSON.stringify(true))
-            else localStorage.setItem('isRandom', JSON.stringify(false))
+                localStorage.setItem('random', JSON.stringify(true))
+            else localStorage.setItem('random', JSON.stringify(false))
+        },
+        switchMode() {
+            if(this.isDarkMode) 
+                localStorage.setItem('darkMode', JSON.stringify(true))
+            else localStorage.setItem('darkMode', JSON.stringify(false))
         },
         restart(paperNum) {
             if(paperNum == 'paper1') {
@@ -98,9 +121,6 @@ export default {
 
 
 <style lang="scss">
-html {
-    overflow-y: hidden;
-}
 a {
     text-decoration: none;
     color: #000;
@@ -111,16 +131,21 @@ a {
 }
 
 .home-container {
-    max-width: 100vw;
-	height: 100vh;
+    height: 100vh;
     padding: 20px;	
     background-color: #F5F6FC;
-    overflow-y: auto;
+
+    @media (max-height: 600px) {
+        height: 100%;
+    }
 
     .papers {
         max-width: 800px;
-        //height: 100vh;
+        height: 100%;
         margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 		text-align: left;
         position: relative;
         overflow-y: hidden;
@@ -160,12 +185,18 @@ a {
             margin-bottom: 20px;
             display: flex;
             justify-content: flex-end;
+            
 
             .toggle {
+                margin-left: 10px;
                &__name {
                    margin-bottom: 5px;
                    font-size: .9rem;
                    text-align: center;
+               }
+
+               .toggle_button {
+                user-select: none;
                }
             }
         }
@@ -226,17 +257,28 @@ a {
                 }
             }
         }
-    }
-
-     .copyright {
-        font-family: 'MyriadPro-Regular', 'sans-serif';
-        font-size: 1rem;
-        max-width: 100%;
-        text-align: center;
-
-        @media (max-width: 768px) {
-            font-size: 0.75rem;
+        .paper-item--dark {
+            background-color: #333333;
+            
+            h2, p {
+                color: #F5F6FC;
+            }
         }
-    }
+
+        .copyright {
+            font-family: 'MyriadPro-Regular', 'sans-serif';
+            font-size: 1rem;
+            max-width: 100%;
+            text-align: center;
+
+            @media (max-width: 768px) {
+                font-size: 0.75rem;
+            }
+        }
+    } 
+}
+.home-container--dark {
+    background-color: #000;
+    color: #F5F6FC
 }
 </style>

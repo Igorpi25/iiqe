@@ -1,20 +1,20 @@
 <template>
-	<div class="quiz-container-fluid">
+	<div class="quiz-container-fluid" :class="{'quiz-container-fluid--dark': isDarkMode}">
 		<div class="container">
 			<div>
 				<h3 class="title">{{ name }}</h3>
 				<p class="subtitle">{{ subtitle }}</p>
 				<div class="question" v-for="(q, index) in quizList" :key="index">
 					<div v-if="questionIndex===index">
-						<div class="question-item" v-html="q.question"></div>
+						<div class="question-item" :class="{'item--dark': isDarkMode}" v-html="q.question"></div>
 						<div class="answer" v-if="isCorrect&&!congrats">
 							<div v-if="isRandom">
-								<div class="answer-item" @click="next(a, idx)" v-for="(a, idx) in q.answers" :key="idx">
+								<div class="answer-item" :class="{'item--dark': isDarkMode}" @click="next(a, idx)" v-for="(a, idx) in q.answers" :key="idx">
 									<div>({{ options[idx] }}) {{ a.text }}</div>
 								</div>
 							</div>
 							<div v-else>
-								<div class="answer-item" @click="next(a, idx)" v-for="(a, idx) in fixPosition" :key="idx">
+								<div class="answer-item" :class="{'item--dark': isDarkMode}" @click="next(a, idx)" v-for="(a, idx) in fixPosition" :key="idx">
 									<div>({{ options[idx] }}) {{ a.text }}</div>
 								</div>
 							</div>
@@ -51,6 +51,7 @@
 					</div>
 				</div>
 			</div>
+
 			<p class="copyright">&copy;Zennnn / All Rights Reserved</p>
 		</div>
 	</div>
@@ -83,7 +84,8 @@ export default {
 			correctColor: JSON.parse(localStorage.getItem(`${this.progressCorrect}correct`)) || [],
 			wrongColor: JSON.parse(localStorage.getItem(`${this.progressWrong}wrong`)) || [],
 			options: ['a', 'b', 'c', 'd'],
-			isRandom: JSON.parse(localStorage.getItem('isRandom')) || false
+			isRandom: JSON.parse(localStorage.getItem('random')) || false,
+			isDarkMode: JSON.parse(localStorage.getItem('darkMode')) || false
 		}
 	},
 	computed :{
@@ -166,7 +168,6 @@ html, body {
 }
 .quiz-container-fluid {
 	max-width: 100vw;
-	height: 100vh;
 	padding: 20px;
 	background-color: #F5F6FC;
 
@@ -179,6 +180,10 @@ html, body {
 		justify-content: space-between;
 		text-align: left;
 		position: relative;
+
+		@media (max-height: 567px) {
+			height: 100%;
+		}
 
 		.title, .subtitle {
 			margin-top: 0;
@@ -240,8 +245,13 @@ html, body {
 			}
 		}
 
+		.item--dark {
+			background-color: #333333;
+			color: #F5F6FC;
+		}
+
 		.congrats {
-			height: 600px;
+			height: 200px;
 			text-align: center;
 			display: flex;
 			flex-direction: column;
@@ -257,10 +267,6 @@ html, body {
 				font-size: 2rem;
 				font-weight: 600;
 				color: #43B136;
-			}
-
-			@media (max-width: 768px) {
-				height: 300px;
 			}
 		}
 
@@ -307,7 +313,6 @@ html, body {
 	.digital {
 		width: 100px;
 		margin: auto;
-		margin-top: 180px;
 		margin-bottom: 20px;
 		display: flex;
 		justify-content: space-around;
@@ -365,5 +370,10 @@ html, body {
             font-size: 0.75rem;
         }
     }
+}
+
+.quiz-container-fluid--dark {
+	background-color: #000;
+    color: #F5F6FC
 }
 </style>
