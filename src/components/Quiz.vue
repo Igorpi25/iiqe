@@ -8,8 +8,8 @@
 					<div v-if="questionIndex===index">
 						<div class="question-item" v-html="q.question"></div>
 						<div class="answer" v-if="isCorrect&&!congrats">
-							<div class="answer-item" @click="next(a, idx)" v-for="(a, idx) in randomize" :key="idx">
-								<div>({{ options[idx] }}) {{ a.text }}</div>	
+							<div class="answer-item" @click="next(a, idx)" v-for="(a, idx) in fixPosition" :key="idx">
+								<div>({{ options[idx] }}) {{ a.text }}</div>
 							</div>
 						</div>
 					</div>
@@ -34,12 +34,12 @@
 					<div class="digital__wrong" style="color:#FF4848">{{ wrongColor.length }}</div>
 				</div>
 				<div class="progress-bar">
-					<div class="pending" 
+					<div class="pending"
 						:class="[
-							{ good: correctColor.indexOf(index) !== -1 }, 
-							{ bad: wrongColor.indexOf(index) !== -1 }, 
+							{ good: correctColor.indexOf(index) !== -1 },
+							{ bad: wrongColor.indexOf(index) !== -1 },
 							{ current: questionIndex == index}
-						]" 
+						]"
 						v-for="(n, index) in quizList" :key="index">
 					</div>
 				</div>
@@ -72,7 +72,7 @@ export default {
 			isCorrect: true,
 			congrats: false,
 			correct: '',
-			picked: '',	
+			picked: '',
 			correctColor: JSON.parse(localStorage.getItem(`${this.progressCorrect}correct`)) || [],
 			wrongColor: JSON.parse(localStorage.getItem(`${this.progressWrong}wrong`)) || [],
 			options: ['a', 'b', 'c', 'd']
@@ -80,45 +80,62 @@ export default {
 	},
 	computed :{
 		randomize() {
-			// this.quizList[this.questionIndex].answers.forEach(answer => {
-			// 	if(answer.hasOwnProperty('fixed_position')) {
+			let answers = this.quizList[this.questionIndex].answers
+			console.log(this.quizList)
+			console.log(answers)
+			return answers.sort((a, b) => Math.random() - 0.5)
+		},
+		fixPosition() {
 
-			// 	}
-			// })
-			return this.quizList[this.questionIndex].answers.sort((a, b) => Math.random() - 0.5)
+			let answers = this.randomize
+
+			 let i = 0
+			 console.log(answers)
+			while(i < 4) {
+				if(answers[i].fixed_position && answers[i].fixed_position-1 != i ) {
+						let fixed_position_index = answers[i].fixed_position-1
+						let temp = answers[i]
+						answers[i]=answers[fixed_position_index]
+						answers[fixed_position_index]=temp
+				}else{
+					i++
+				}
+			}
+			console.log(answers)
+			return answers
 		}
 	},
 	methods: {
-		next(obj, optionIndex) {	
+		next(obj, optionIndex) {
 			let correctIndex
 			let correct = this.quizList[this.questionIndex].answers.filter((corr, index) => {
 				if(corr.hasOwnProperty('correct')) {
 					correctIndex = index
 					return corr
-				}	
+				}
 			})
 			this.correct = `(${this.options[correctIndex]}) ${correct[0].text}`
-			
+			console.log(this.quizList[this.questionIndex].answers)
 			this.picked = `(${this.options[optionIndex]}) ${obj.text}`
 
 			if(obj.hasOwnProperty('correct')) {
 				this.congrats = true
 				this.isWrong = false
 
-				this.correctColor.indexOf(this.questionIndex) === -1 && 
-					this.wrongColor.indexOf(this.questionIndex) === -1 ? 
+				this.correctColor.indexOf(this.questionIndex) === -1 &&
+					this.wrongColor.indexOf(this.questionIndex) === -1 ?
 					this.correctColor.push(this.questionIndex) : this.correctColor
-				
+
 				localStorage.setItem(`${this.progressCorrect}correct`, JSON.stringify(this.correctColor))
-				
+
 				setTimeout(() => {
 					this.congrats = false
 					this.questionIndex++
 
-					localStorage.setItem(this.progressKey, this.questionIndex)	
+					localStorage.setItem(this.progressKey, this.questionIndex)
 
 					if(this.questionIndex === this.quizList.length) {
-						this.questionIndex = 0	
+						this.questionIndex = 0
 
 						localStorage.removeItem(this.progressKey)
 						localStorage.removeItem(`${this.progressWrong}wrong`)
@@ -127,9 +144,9 @@ export default {
 			}
 			else {
 				this.isCorrect = false
-				this.wrongColor.indexOf(this.questionIndex) === -1 ? 
+				this.wrongColor.indexOf(this.questionIndex) === -1 ?
 					this.wrongColor.push(this.questionIndex) : this.wrongColor
-				
+
 				localStorage.setItem(`${this.progressWrong}wrong`, JSON.stringify(this.wrongColor))
 			}
 		},
@@ -148,7 +165,7 @@ html, body {
 .quiz-container-fluid {
 	max-width: 100vw;
 	height: 100vh;
-	padding: 20px;	
+	padding: 20px;
 	background-color: #F5F6FC;
 
 	.container {
@@ -226,7 +243,7 @@ html, body {
 			text-align: center;
 			display: flex;
 			flex-direction: column;
-			
+
 			&__correct {
 				padding: 10px 0;
 				background-color: #43B136;
@@ -234,7 +251,7 @@ html, body {
 			}
 
 			p {
-				transform: translateY(50%);	
+				transform: translateY(50%);
 				font-size: 2rem;
 				font-weight: 600;
 				color: #43B136;
@@ -348,4 +365,3 @@ html, body {
     }
 }
 </style>
-
