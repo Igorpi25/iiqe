@@ -5,18 +5,22 @@
                 <h3 class="header__title">BERLOGGA-IIQE</h3>
                 <div class="header__logo"><img src="../assets/logo.png"></div>
            </div>
-            <div class="toggle">
-                <toggle-button 
-                    class="toggle__button"
-                    :width="75"
-                    :height="30" 
-                    :value="true"
-                    :checked="false"
-                    :labels="{checked: 'fixed', unchecked: 'random'}"
-                    v-model="isRandom"
-                    @change="switchOrder"
-                >
-                </toggle-button>
+           <div class="toggle-container">
+                <div class="toggle">
+                    <p class="toggle__name">Random</p>
+                    <toggle-button 
+                        class="toggle__button"
+                        :width="75"
+                        :height="30" 
+                        :font-size="14"
+                        :value="true"
+                        :checked="false"
+                        :labels="{checked: 'on', unchecked: 'off'}"
+                        v-model="isRandom"
+                        @change="switchOrder"
+                    >
+                    </toggle-button>
+                </div>
             </div>
             <div class="paper-item">
                 <router-link to="/paper1">
@@ -59,7 +63,7 @@ export default {
     },
     data() {
         return {
-            isRandom: JSON.parse(localStorage.getItem('isRandom')),
+            isRandom: JSON.parse(localStorage.getItem('isRandom')) || false,
             progressPaper1: parseInt(localStorage.getItem('paper_1')) + 1 || 1,
             progressPaper3: parseInt(localStorage.getItem('paper_3')) + 1 || 1,
             p1_correct: JSON.parse(localStorage.getItem('p1_correct')) || [],
@@ -151,14 +155,18 @@ a {
             }
         }
 
-        .toggle {
+        .toggle-container {
             width: 100%;
             margin-bottom: 20px;
             display: flex;
             justify-content: flex-end;
 
-            &__button {
-                //margin-right: 30px;
+            .toggle {
+               &__name {
+                   margin-bottom: 5px;
+                   font-size: .9rem;
+                   text-align: center;
+               }
             }
         }
 
