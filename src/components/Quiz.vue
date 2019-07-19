@@ -8,8 +8,15 @@
 					<div v-if="questionIndex===index">
 						<div class="question-item" v-html="q.question"></div>
 						<div class="answer" v-if="isCorrect&&!congrats">
-							<div class="answer-item" @click="next(a, idx)" v-for="(a, idx) in fixPosition" :key="idx">
-								<div>({{ options[idx] }}) {{ a.text }}</div>
+							<div v-if="isRandom">
+								<div class="answer-item" @click="next(a, idx)" v-for="(a, idx) in q.answers" :key="idx">
+									<div>({{ options[idx] }}) {{ a.text }}</div>
+								</div>
+							</div>
+							<div v-else>
+								<div class="answer-item" @click="next(a, idx)" v-for="(a, idx) in fixPosition" :key="idx">
+									<div>({{ options[idx] }}) {{ a.text }}</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -75,33 +82,28 @@ export default {
 			picked: '',
 			correctColor: JSON.parse(localStorage.getItem(`${this.progressCorrect}correct`)) || [],
 			wrongColor: JSON.parse(localStorage.getItem(`${this.progressWrong}wrong`)) || [],
-			options: ['a', 'b', 'c', 'd']
+			options: ['a', 'b', 'c', 'd'],
+			isRandom: JSON.parse(localStorage.getItem('isRandom')) || false
 		}
 	},
 	computed :{
 		randomize() {
 			let answers = this.quizList[this.questionIndex].answers
-			console.log(this.quizList)
-			console.log(answers)
 			return answers.sort((a, b) => Math.random() - 0.5)
 		},
 		fixPosition() {
-
 			let answers = this.randomize
-
-			 let i = 0
-			 console.log(answers)
+			let i = 0
 			while(i < 4) {
-				if(answers[i].fixed_position && answers[i].fixed_position-1 != i ) {
-						let fixed_position_index = answers[i].fixed_position-1
-						let temp = answers[i]
-						answers[i]=answers[fixed_position_index]
-						answers[fixed_position_index]=temp
+				if(answers[i].fixed_position && answers[i].fixed_position -1 != i ) {
+					let fixed_position_index = answers[i].fixed_position -1
+					let temp = answers[i]
+					answers[i] = answers[fixed_position_index]
+					answers[fixed_position_index] = temp
 				}else{
 					i++
 				}
 			}
-			console.log(answers)
 			return answers
 		}
 	},

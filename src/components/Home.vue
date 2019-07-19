@@ -5,12 +5,25 @@
                 <h3 class="header__title">BERLOGGA-IIQE</h3>
                 <div class="header__logo"><img src="../assets/logo.png"></div>
            </div>
+            <div class="toggle">
+                <toggle-button 
+                    class="toggle__button"
+                    :width="75"
+                    :height="30" 
+                    :value="true"
+                    :checked="false"
+                    :labels="{checked: 'fixed', unchecked: 'random'}"
+                    v-model="isRandom"
+                    @change="switchOrder"
+                >
+                </toggle-button>
+            </div>
             <div class="paper-item">
                 <router-link to="/paper1">
                     <h2>Paper 1</h2>
                     <p>Principles and Practice of Insurance</p>
                 </router-link>
-                <div class="restart" @click="restart('paper1')"><icon-base iconColor="#FF4848" width="24" height="24"><icon-refresh /></icon-base></div>
+                <div class="restart" @click="restart('paper1')"><icon-base iconColor="#1A8DFF" width="24" height="24"><icon-refresh /></icon-base></div>
                 <div class="progress">{{ this.progressPaper1 }} / 75</div>
                 <div class="progress-counter">
                     <div class="progress-counter__correct">{{ p1_correct.length }}</div>
@@ -22,7 +35,7 @@
                     <h2>Paper 3</h2>
                     <p>Long Term Insurance Examination</p>
                 </router-link>
-                <div class="restart" @click="restart('paper3')"><icon-base iconColor="#FF4848" width="24" height="24"><icon-refresh /></icon-base></div>
+                <div class="restart" @click="restart('paper3')"><icon-base iconColor="#1A8DFF" width="24" height="24"><icon-refresh /></icon-base></div>
                 <div class="progress">{{ this.progressPaper3 }} / 50</div>
                 <div class="progress-counter">
                     <div class="progress-counter__correct">{{ p3_correct.length }}</div>
@@ -37,13 +50,16 @@
 <script>
 import IconBase from '@/components/icons/IconBase'
 import IconRefresh from '@/components/icons/IconRefresh'
+import { ToggleButton } from 'vue-js-toggle-button'
 export default {
     components: {
         IconBase,
-        IconRefresh
+        IconRefresh,
+        ToggleButton
     },
     data() {
         return {
+            isRandom: JSON.parse(localStorage.getItem('isRandom')),
             progressPaper1: parseInt(localStorage.getItem('paper_1')) + 1 || 1,
             progressPaper3: parseInt(localStorage.getItem('paper_3')) + 1 || 1,
             p1_correct: JSON.parse(localStorage.getItem('p1_correct')) || [],
@@ -53,6 +69,11 @@ export default {
         }
     },
     methods: {
+        switchOrder() {
+            if(this.isRandom) 
+                localStorage.setItem('isRandom', JSON.stringify(true))
+            else localStorage.setItem('isRandom', JSON.stringify(false))
+        },
         restart(paperNum) {
             if(paperNum == 'paper1') {
                 localStorage.removeItem('paper_1')
@@ -74,7 +95,7 @@ export default {
 
 <style lang="scss">
 html {
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 a {
     text-decoration: none;
@@ -94,11 +115,11 @@ a {
 
     .papers {
         max-width: 800px;
-        height: 100vh;
+        //height: 100vh;
         margin: auto;
 		text-align: left;
         position: relative;
-        overflow-y: auto;
+        overflow-y: hidden;
 
        .header {
            display: flex;
@@ -127,6 +148,17 @@ a {
                 img {
                     width: 100%;
                 }
+            }
+        }
+
+        .toggle {
+            width: 100%;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: flex-end;
+
+            &__button {
+                //margin-right: 30px;
             }
         }
 
@@ -160,7 +192,6 @@ a {
                 width: 40px;
                 height: 32px;
                 margin-top: 30px;
-                color: #FF4848;
                 cursor: pointer;
             }
 
