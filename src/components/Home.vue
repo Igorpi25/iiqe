@@ -12,6 +12,7 @@
                         <p class="toggle__name">Random</p>
                         <toggle-button 
                             class="toggle__button"
+                            color="#43B136"
                             :width="75"
                             :height="30" 
                             :font-size="16"
@@ -26,6 +27,7 @@
                         <p class="toggle__name">Dark mode</p>
                         <toggle-button 
                             class="toggle__button"
+                            color="#43B136"
                             :width="75"
                             :height="30" 
                             :font-size="16"
@@ -134,6 +136,7 @@ a {
     height: 100vh;
     padding: 20px;	
     background-color: #F5F6FC;
+    box-sizing: border-box;
 
     @media (max-height: 600px) {
         height: 100%;
@@ -259,6 +262,7 @@ a {
         }
         .paper-item--dark {
             background-color: #333333;
+            box-shadow: none;
             
             h2, p {
                 color: #F5F6FC;
@@ -278,7 +282,7 @@ a {
     } 
 }
 .home-container--dark {
-    background-color: #000;
+    background-color: rgb(20, 20, 20);
     color: #F5F6FC
 }
 </style>

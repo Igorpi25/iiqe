@@ -24,13 +24,13 @@
 			</div>
 
 			<div class="congrats" v-show="congrats">
-				<div class="congrats__correct">{{ correct }}</div>
+				<div class="congrats__correct" :class="{'congrats__correct--dark': isDarkMode}">{{ correct }}</div>
 				<p>Yes!</p>
 			</div>
 
 			<div class="error" v-show="!isCorrect">
-				<div class="err wrong">{{ picked }}</div>
-				<div class="err correct">{{ correct }}</div>
+				<div class="err wrong" :class="{'wrong--dark': isDarkMode}">{{ picked }}</div>
+				<div class="err correct" :class="{'correct--dark': isDarkMode}">{{ correct }}</div>
 				<div class="try-again" @click="tryAgain"><p>try again</p></div>
 			</div>
 			<div class="counter">{{questionIndex + 1}} / {{quizList.length}}</div>
@@ -85,7 +85,8 @@ export default {
 			wrongColor: JSON.parse(localStorage.getItem(`${this.progressWrong}wrong`)) || [],
 			options: ['a', 'b', 'c', 'd'],
 			isRandom: JSON.parse(localStorage.getItem('random')) || false,
-			isDarkMode: JSON.parse(localStorage.getItem('darkMode')) || false
+			isDarkMode: JSON.parse(localStorage.getItem('darkMode')) || false,
+			isRounded: false
 		}
 	},
 	computed :{
@@ -126,11 +127,20 @@ export default {
 				this.congrats = true
 				this.isWrong = false
 
-				this.correctColor.indexOf(this.questionIndex) === -1 &&
-					this.wrongColor.indexOf(this.questionIndex) === -1 ?
-					this.correctColor.push(this.questionIndex) : this.correctColor
+				if(!this.isRounded) {
+					this.correctColor.indexOf(this.questionIndex) === -1 &&
+						this.wrongColor.indexOf(this.questionIndex) === -1 ?
+						this.correctColor.push(this.questionIndex) : this.correctColor
 
-				localStorage.setItem(`${this.progressCorrect}correct`, JSON.stringify(this.correctColor))
+					localStorage.setItem(`${this.progressCorrect}correct`, JSON.stringify(this.correctColor))
+				}
+				else {
+					this.correctColor.indexOf(this.questionIndex) === -1 ?
+						this.correctColor.push(this.questionIndex) : this.correctColor
+
+					this.wrongColor.splice(this.questionIndex, 1)
+					localStorage.setItem(`${this.progressCorrect}correct`, JSON.stringify(this.correctColor))
+				}
 
 				setTimeout(() => {
 					this.congrats = false
@@ -140,18 +150,22 @@ export default {
 
 					if(this.questionIndex === this.quizList.length) {
 						this.questionIndex = 0
+						this.isRounded = true	
 
 						localStorage.removeItem(this.progressKey)
 						localStorage.removeItem(`${this.progressWrong}wrong`)
+						localStorage.removeItem(`${this.progressCorrect}correct`)
 					}
 				}, 1600)
 			}
 			else {
 				this.isCorrect = false
+
 				this.wrongColor.indexOf(this.questionIndex) === -1 ?
 					this.wrongColor.push(this.questionIndex) : this.wrongColor
 
 				localStorage.setItem(`${this.progressWrong}wrong`, JSON.stringify(this.wrongColor))
+				
 			}
 		},
 		tryAgain() {
@@ -170,6 +184,7 @@ html, body {
 	max-width: 100vw;
 	padding: 20px;
 	background-color: #F5F6FC;
+	
 
 	.container {
 		max-width: 800px;
@@ -208,6 +223,7 @@ html, body {
 			padding: 20px;
 			padding-right: 30%;
 			margin-bottom: 20px;
+			line-height: 1.3rem;
 			font-weight: 600;
 			border-radius: 16px;
 			-webkit-box-shadow: 0px 0px 8px 0px rgba(50,132,229,0.16);
@@ -248,24 +264,36 @@ html, body {
 		.item--dark {
 			background-color: #333333;
 			color: #F5F6FC;
+			box-shadow: none;
+
+			&:hover {
+				box-shadow: none;
+			}
 		}
 
 		.congrats {
 			height: 200px;
-			text-align: center;
+			text-align: left;
 			display: flex;
 			flex-direction: column;
+			box-sizing: border-box;
 
 			&__correct {
-				padding: 10px 0;
+				padding: 10px 20px;
 				background-color: #43B136;
 				color: #fff;
 			}
 
 			p {
+				text-align: center;
 				transform: translateY(50%);
 				font-size: 2rem;
 				font-weight: 600;
+				color: #43B136;
+			}
+
+			&__correct--dark {
+				background-color: #333333;
 				color: #43B136;
 			}
 		}
@@ -273,17 +301,28 @@ html, body {
 		.err {
 			width: 100%;
 			min-height: auto;
-			padding: 10px 0;
+			padding: 10px 20px;
 			vertical-align: middle;
-			text-align: center;
+			text-align: left;
 			color: #fff;
+			box-sizing: border-box;
 		}
 		.wrong {
 			margin-bottom: 10px;
 			background-color: #FF4848;
+			color: #fff;
+		}
+		.wrong--dark {
+			background-color: #333333;
+			color: #FF4848;
 		}
 		.correct {
 			background-color: #43B136;
+			color: #fff;
+		}
+		.correct--dark {
+			background-color: #333333;
+			color: #43B136;
 		}
 		.try-again {
 			height: 200px;
@@ -373,7 +412,7 @@ html, body {
 }
 
 .quiz-container-fluid--dark {
-	background-color: #000;
+	background-color: rgb(20, 20, 20);
     color: #F5F6FC
 }
 </style>
